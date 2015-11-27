@@ -73,12 +73,21 @@
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2015/11/25/第二篇/" title="第二篇" itemprop="url">
+    <a href="/2015/11/25/js作用域/" title="js变量的作用域" itemprop="url">
   
-    <h1 itemprop="name">第二篇</h1>
+    <h1 itemprop="name">js变量的作用域</h1>
     
      
-           <p itemprop="description" ></p>
+           <p itemprop="description" >浏览器对js文件的解析机制function fn(){};
+fn();
+console.log(i);
+var i=10;
+var k=20;
+console.log(k);
+首先，浏览器在解析这段代码前，是先把代码中的变量 i和k放到了代码最前面。
+上例：
+ var i ;
+ </p>
         
     
     <time datetime="2015-11-25T08:59:17.000Z" itemprop="datePublished">2015-11-25</time>
