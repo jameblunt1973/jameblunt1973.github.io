@@ -91,7 +91,7 @@ console.log(k);
   -->  
   <p class="article-time">
     <time datetime="2015-11-25T08:59:17.000Z" itemprop="datePublished">2015-11-25</time>
-    更新日期:<time datetime="2015-11-28T13:05:18.000Z" itemprop="dateModified">2015-11-28</time>
+    更新日期:<time datetime="2015-11-28T13:06:45.000Z" itemprop="dateModified">2015-11-28</time>
     
   </p>
 </header>
@@ -101,7 +101,7 @@ console.log(k);
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#浏览器对js文件的解析机制"><span class="toc-number">1.</span> <span class="toc-text">浏览器对js文件的解析机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量的作用域"><span class="toc-number">2.</span> <span class="toc-text">变量的作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的书写形式"><span class="toc-number">2.1.</span> <span class="toc-text">函数的书写形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作用域"><span class="toc-number">2.2.</span> <span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的使用方法拓展"><span class="toc-number">2.3.</span> <span class="toc-text">函数的使用方法拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在外部使用函数内部的变量"><span class="toc-number">2.3.1.</span> <span class="toc-text">在外部使用函数内部的变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算函数参数值的和的方法"><span class="toc-number">2.3.2.</span> <span class="toc-text">计算函数参数值的和的方法</span></a></li></ol></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#浏览器对js文件的解析机制"><span class="toc-number">1.</span> <span class="toc-text">浏览器对js文件的解析机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的书写形式"><span class="toc-number">1.1.</span> <span class="toc-text">函数的书写形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作用域"><span class="toc-number">1.2.</span> <span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的使用方法拓展"><span class="toc-number">1.3.</span> <span class="toc-text">函数的使用方法拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在外部使用函数内部的变量"><span class="toc-number">1.3.1.</span> <span class="toc-text">在外部使用函数内部的变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算函数参数值的和的方法"><span class="toc-number">1.3.2.</span> <span class="toc-text">计算函数参数值的和的方法</span></a></li></ol></li></ol></li></ol>
 		</div>
 		
 		<h1 id="浏览器对js文件的解析机制">浏览器对js文件的解析机制</h1><pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{};
@@ -120,7 +120,8 @@ fn();
  i=<span class="number">10</span>;
  k=<span class="number">20</span>;
  <span class="built_in">console</span>.log(k);<span class="comment">//此处k的值就是打印出来就是 20；从执行顺序来看，可以获取到k的值。</span>
-</code></pre><h1 id="变量的作用域">变量的作用域</h1><h2 id="函数的书写形式">函数的书写形式</h2><pre><code>要想了解变量的作用域需要先明白函数的三种形式
+</code></pre><p>#变量的作用域</p>
+<h2 id="函数的书写形式">函数的书写形式</h2><pre><code>要想了解变量的作用域需要先明白函数的三种形式
 声明函数是使用<span class="function"><span class="keyword">function</span>关键字+函数名来声明的函数</span>
 例：
     <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span>{</span>
