@@ -91,7 +91,7 @@ console.log(k);
   -->  
   <p class="article-time">
     <time datetime="2015-11-25T08:59:17.000Z" itemprop="datePublished">2015-11-25</time>
-    更新日期:<time datetime="2015-11-28T13:03:10.000Z" itemprop="dateModified">2015-11-28</time>
+    更新日期:<time datetime="2015-11-28T13:05:18.000Z" itemprop="dateModified">2015-11-28</time>
     
   </p>
 </header>
@@ -147,37 +147,37 @@ fn();
              console.<span class="built_in">log</span>(<span class="string">'啊，你是嘿嘿呀！'</span>)
          }();
 </code></pre><h2 id="作用域">作用域</h2><pre><code>首先了解下全局变量和局部变量。
-    在js中 使用 var 的定义的变量叫做局部变量。直接定义的变量就是全局变量。
+    在js中 使用 <span class="keyword">var</span> 的定义的变量叫做局部变量。直接定义的变量就是全局变量。
 例：
- var i＝ <span class="number">10</span>; i 这个变量就是局部变量
+ <span class="keyword">var</span> i＝ <span class="number">10</span>; i 这个变量就是局部变量
   i＝ <span class="number">10</span> ; i 这个变量就是全局变量
 变量的作用域
     例<span class="number">1</span>：
-     var a = <span class="number">10</span>;//a 是局部变量，如果它没有在<span class="function"><span class="keyword">function</span></span>中，它的作用域就是整个js；
-      b = <span class="number">20</span>; // b是全局变量，作用域是整个js；
-     <span class="function"><span class="keyword">function</span></span> fn (){
-         var c =<span class="number">30</span> ; c是局部变量，它的作用域是在fn函数下。
-         <span class="function"><span class="keyword">function</span></span> fn1(){
-             i = <span class="number">40</span>; i 是全局变量，它的作用域是在整个js下。
-             var c ＝ <span class="number">40</span> ;c 是局部变量，它的作用域是在fn1下。
-             var d = <span class="number">50</span>;  d 是局部变量，它的作用域是在fn1下。
-             console.<span class="built_in">log</span>(a);
+     <span class="keyword">var</span> a = <span class="number">10</span>;<span class="comment">//a 是局部变量，如果它没有在function中，它的作用域就是整个js；</span>
+      b = <span class="number">20</span>; <span class="comment">// b是全局变量，作用域是整个js；</span>
+     <span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>)</span>{
+         <span class="keyword">var</span> c =<span class="number">30</span> ; <span class="comment">//c是局部变量，它的作用域是在fn函数下。</span>
+         <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
+             i = <span class="number">40</span>; <span class="comment">//i 是全局变量，它的作用域是在整个js下。</span>
+             <span class="keyword">var</span> c ＝ <span class="number">40</span> ;<span class="comment">//c 是局部变量，它的作用域是在fn1下。</span>
+             <span class="keyword">var</span> d = <span class="number">50</span>;  <span class="comment">//d 是局部变量，它的作用域是在fn1下。</span>
+             <span class="built_in">console</span>.log(a);
                 }
          fn1();
 
      }
      fn()
      例<span class="number">2</span>：
-     <span class="function"><span class="keyword">function</span></span> fn(){
-         var c=<span class="number">30</span>;
-         <span class="function"><span class="keyword">function</span></span> fn1(){
-          console.<span class="built_in">log</span>(c)//此时c的值就使它父级<span class="function"><span class="keyword">function</span></span>的c的值<span class="number">30</span>；
+     <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{
+         <span class="keyword">var</span> c=<span class="number">30</span>;
+         <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
+          <span class="built_in">console</span>.log(c)<span class="comment">//此时c的值就使它父级function的c的值30；</span>
          }
      }
- 小结;当变量是全局变量时，不论变量有没有在<span class="function"><span class="keyword">function</span></span>下，变量的作用域都是整个js。当变量定义为局部变量时，
- 如果变量没有在<span class="function"><span class="keyword">function</span></span>下，它的作用域就是整个js。如果在<span class="function"><span class="keyword">function</span></span>下，就作用域这个<span class="function"><span class="keyword">function</span></span>。
- 如果在<span class="function"><span class="keyword">function</span></span>下有使用变量，却没有定义时，
- 就往上找到它的父级<span class="function"><span class="keyword">function</span></span>，继承它父级<span class="function"><span class="keyword">function</span></span>的值。
+ 小结;当变量是全局变量时，不论变量有没有在<span class="function"><span class="keyword">function</span>下，变量的作用域都是整个<span class="title">js</span>。当变量定义为局部变量时，
+ 如果变量没有在<span class="title">function</span>下，它的作用域就是整个<span class="title">js</span>。如果在<span class="title">function</span>下，就作用域这个<span class="title">function</span>。
+ 如果在<span class="title">function</span>下有使用变量，却没有定义时，
+ 就往上找到它的父级<span class="title">function</span>，继承它父级<span class="title">function</span>的值。</span>
 </code></pre><h2 id="函数的使用方法拓展">函数的使用方法拓展</h2><h3 id="在外部使用函数内部的变量">在外部使用函数内部的变量</h3><pre><code>例<span class="number">1</span>：
   <span class="keyword">var</span>  j=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
           <span class="keyword">var</span> max = <span class="number">10</span>;
