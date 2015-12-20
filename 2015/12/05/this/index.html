@@ -9,8 +9,7 @@
     
     <meta name="author" content="网拖">
     
-    <meta name="description" content="this   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。   “http://blog.jobbole.com/39305/“  1.当函数作为对象的方法调用时，this指向该对象。
-2.当函数作为淡出函数调用时，this指向全局对象（严格模式时">
+    <meta name="description" content="this   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。   “http://blog.jobbole.com/39305/“1.当函数作为对象的方法调用时，this指向该对象。    例：var obj= {        x:10,     ">
     
     
     
@@ -83,7 +82,7 @@
   -->  
   <p class="article-time">
     <time datetime="2015-12-05T09:18:43.000Z" itemprop="datePublished">2015-12-05</time>
-    更新日期:<time datetime="2015-12-05T11:12:50.000Z" itemprop="dateModified">2015-12-05</time>
+    更新日期:<time datetime="2015-12-20T09:13:17.000Z" itemprop="dateModified">2015-12-20</time>
     
   </p>
 </header>
@@ -96,11 +95,10 @@
 		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#this"><span class="toc-number">1.</span> <span class="toc-text">this</span></a></li></ol>
 		</div>
 		
-		<h2 id="this">this</h2><p>   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。<br>   “<a href="http://blog.jobbole.com/39305/" target="_blank" rel="external">http://blog.jobbole.com/39305/</a>“<br>  1.当函数作为对象的方法调用时，this指向该对象。</p>
-<p>2.当函数作为淡出函数调用时，this指向全局对象（严格模式时，为undefined）</p>
-<p>3.构造函数中的this指向新创建的对象</p>
+		<h2 id="this">this</h2><p>   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。<br>   “<a href="http://blog.jobbole.com/39305/" target="_blank" rel="external">http://blog.jobbole.com/39305/</a>“<br>1.当函数作为对象的方法调用时，this指向该对象。<br>    例：var obj= {<br>        x:10,<br>        y:20,<br>        fn:function(){<br>            this.x = 20;<br>            console.log(this)//this指向obj<br>        }<br>    }<br>    fn()<br>2.当函数作为弹出函数调用时，this指向全局对象（严格模式时，为undefined）</p>
+<p>3.构造函数中的this指向创建改函数的对象<br>    例：function fn1(){<br>            var i = 0 ;<br>            var j = 0 ;<br>            this.x=1;<br>             console.log(this)<br>        }<br>    fn2 = new fn1();<br>    fn2 = function(){<br>          this.y=1;<br>          console.log(this)//this指向fn1<br>     }<br>     fn1(fn2) </p>
 <p>4.嵌套函数中的this不会继承上层函数的this，如果需要，可以用一个变量保存上层函数的this。</p>
-<p>再总结的简单点，如果在函数中使用了this，只有在该函数直接被某对象调用时，该this才指向该对象。<br>待续。。。</p>
+<p>再总结的简单点，如果在函数中使用了this，只有在该函数直接被某对象调用时，该this才指向该对象。正常函数的调用，this指的是window，特殊函数的调用，this指象对象。函数声明、匿名函数和函数表达式在全局中调用 this指向window</p>
   
 	</div>
 		<footer class="article-footer clearfix">
