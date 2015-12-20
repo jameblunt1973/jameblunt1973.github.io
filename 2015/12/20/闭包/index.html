@@ -9,7 +9,9 @@
     
     <meta name="author" content="网拖">
     
-    <meta name="description" content="###for循环中遍历不到i值的解决方法。也就是闭包的问题。    for获取值的问题（闭包） for(var i=0;i&amp;lt;a.length;i++){}在循环内的数值，变化是把i遍历了一边。 在循环外得到的值是循环结束后的值。 1、将变量i保存在每个段落对象（p）上。如果在循环下出现点击事件">
+    <meta name="description" content="for循环中遍历不到i值的解决方法。也就是闭包的问题。for获取值的问题（闭包）
+ for(var i=0;i&amp;lt;a.length;i++){}在循环内的数值，变化是把i遍历了一边。 在循环外得到的值是循环结束后的值。
+1、将变量i保存在每个段落对象（p）上。如果在循环下出现点击事件函数，函数中">
     
     
     
@@ -84,7 +86,7 @@
   -->  
   <p class="article-time">
     <time datetime="2015-12-20T09:17:26.000Z" itemprop="datePublished">2015-12-20</time>
-    更新日期:<time datetime="2015-12-20T09:21:12.000Z" itemprop="dateModified">2015-12-20</time>
+    更新日期:<time datetime="2015-12-20T09:28:49.000Z" itemprop="dateModified">2015-12-20</time>
     
   </p>
 </header>
@@ -94,12 +96,51 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#for循环中遍历不到i值的解决方法。也就是闭包的问题。"><span class="toc-number">1.</span> <span class="toc-text">for循环中遍历不到i值的解决方法。也就是闭包的问题。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、将变量i保存在每个段落对象（p）上。如果在循环下出现点击事件函数，函数中获取不到i的遍历值。需要给点击事件增加一个属性"><span class="toc-number">1.0.1.</span> <span class="toc-text">1、将变量i保存在每个段落对象（p）上。如果在循环下出现点击事件函数，函数中获取不到i的遍历值。需要给点击事件增加一个属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、如果在循环下面出现函数时，获取遍历值时，函数的执行需要在for循环下才能遍历到i的值"><span class="toc-number">1.0.2.</span> <span class="toc-text">2、如果在循环下面出现函数时，获取遍历值时，函数的执行需要在for循环下才能遍历到i的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、加一层闭包，i以函数参数形式传递给内层函数。"><span class="toc-number">1.0.3.</span> <span class="toc-text">3、加一层闭包，i以函数参数形式传递给内层函数。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、加一层闭包，i以局部变量形式传给内存函数。"><span class="toc-number">1.0.4.</span> <span class="toc-text">4、加一层闭包，i以局部变量形式传给内存函数。</span></a></li></ol></li></ol></li></ol>
 		</div>
 		
-		<p>###for循环中遍历不到i值的解决方法。也就是闭包的问题。<br>    for获取值的问题（闭包）<br> for(var i=0;i&lt;a.length;i++){}在循环内的数值，变化是把i遍历了一边。<br> 在循环外得到的值是循环结束后的值。<br> 1、将变量i保存在每个段落对象（p）上。如果在循环下出现点击事件函数，函数中获取不到i的遍历值。需要给点击事件增加一个属性<br>来保存遍历的i值。在点击事件中使用时，需要用到this（需要分清此时的this指向的那个<br>对象）。例：<br>    for(var i=0;i&lt;a.length;i++){<br>        a[i].index=i;<br>        // console.log(a)<br>        a[i].onclick=function(){<br>            console.log(a[i])//a[i]获取不到。this指向单个p；<br>            }<br>        }<br>2、如果在循环下面出现函数时，获取遍历值时，函数的执行需要在for循环下才能遍历到i的值<br>    例：<br>    var a=document.querySelectorAll(‘p’);<br>    for(var i=0;i&lt;a.length;i++){<br>        console.log(i)<br>        function woqu (){<br>         console.log(i)<br>        }<br>        woqu()//在此处执行函数时，可以遍历到i的值<br>    }<br>woqu()//在此处执行函数时，不可以遍历到i的值</p>
-<p>3、加一层闭包，i以函数参数形式传递给内层函数。<br>    例：<br>    var a=document.querySelectorAll(‘p’);<br>        console.log(a)<br>            for(var i=0;i&lt;a.length;i++){<br>            (function(i){<br>                a[i].onclick=function(){<br>                    console.log(a[i])<br>                };<br>            })(i);<br>        }</p>
-<p>4、加一层闭包，i以局部变量形式传给内存函数。<br>    例：<br>    var a=document.querySelectorAll(‘p’);<br>    for(var i=0;i&lt;a.length;i++){<br>        (function(){<br>            var temp=i;<br>            a[i].onclick=function(){<br>                console.log(temp)<br>                console.log(i)<br>            }<br>        })()<br>    }</p>
+		<h1 id="for循环中遍历不到i值的解决方法。也就是闭包的问题。">for循环中遍历不到i值的解决方法。也就是闭包的问题。</h1><pre><code><span class="keyword">for</span>获取值的问题（闭包）
+</code></pre><p> for(var i=0;i&lt;a.length;i++){}在循环内的数值，变化是把i遍历了一边。<br> 在循环外得到的值是循环结束后的值。</p>
+<h3 id="1、将变量i保存在每个段落对象（p）上。如果在循环下出现点击事件函数，函数中获取不到i的遍历值。需要给点击事件增加一个属性">1、将变量i保存在每个段落对象（p）上。如果在循环下出现点击事件函数，函数中获取不到i的遍历值。需要给点击事件增加一个属性</h3><p>   来保存遍历的i值。在点击事件中使用时，需要用到this（需要分清此时的this指向的那个<br>对象）。例：</p>
+<pre><code><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;a.length;i++)<span class="comment">{
+    a[i].index=i;
+    // console.log(a)
+    a[i].onclick=function(){
+        console.log(a[i])//a[i]获取不到。this指向单个p；
+        }</span>
+    }
+</code></pre><h3 id="2、如果在循环下面出现函数时，获取遍历值时，函数的执行需要在for循环下才能遍历到i的值">2、如果在循环下面出现函数时，获取遍历值时，函数的执行需要在for循环下才能遍历到i的值</h3><pre><code>例：
+<span class="keyword">var</span> a=<span class="built_in">document</span>.querySelectorAll(<span class="string">'p'</span>);
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;a.length;i++){
+    <span class="built_in">console</span>.log(i)    
+    <span class="function"><span class="keyword">function</span> <span class="title">woqu</span> (<span class="params"></span>)</span>{
+     <span class="built_in">console</span>.log(i)
+    }
+    woqu()<span class="comment">//在此处执行函数时，可以遍历到i的值</span>
+}
+woqu()<span class="comment">//在此处执行函数时，不可以遍历到i的值</span>
+</code></pre><h3 id="3、加一层闭包，i以函数参数形式传递给内层函数。">3、加一层闭包，i以函数参数形式传递给内层函数。</h3><pre><code>例： 
+<span class="keyword">var</span> a=<span class="built_in">document</span>.querySelectorAll(<span class="string">'p'</span>);
+    <span class="built_in">console</span>.log(a)
+        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;a.length;i++){            
+        (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>{
+            a[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                <span class="built_in">console</span>.log(a[i])
+            };
+        })(i);
+    }
+</code></pre><h3 id="4、加一层闭包，i以局部变量形式传给内存函数。">4、加一层闭包，i以局部变量形式传给内存函数。</h3><pre><code>例：
+<span class="keyword">var</span> a=<span class="built_in">document</span>.querySelectorAll(<span class="string">'p'</span>);
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;a.length;i++){
+    (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">var</span> temp=i;        
+        a[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            <span class="built_in">console</span>.log(temp)
+            <span class="built_in">console</span>.log(i)
+        }
+    })()
+}
+</code></pre><p>以上就是闭包问题的几种方法，当然还有其他的方法。找到一个合适自己的使用吧</p>
   
 	</div>
 		<footer class="article-footer clearfix">
