@@ -63,7 +63,8 @@
 <meta property="og:url" content="http://yoursite.com/2015/12/05/js中的this使用/index.html">
 <meta property="og:site_name" content="前端小站">
 <meta property="og:description" content="this   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。   “http://blog.jobbole.com/39305/“1.当函数作为对象的方法调用时，this指向该对象。    例：var obj= {        x:10,        y:20,        fn:function(){            this.x =">
-<meta property="og:updated_time" content="2016-02-25T09:42:15.000Z">
+<meta property="og:image" content="http://sudasuta.com/wp-content/uploads/2016/01/Brianwillette-6.jpg">
+<meta property="og:updated_time" content="2016-02-25T13:43:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js中的this运用">
 <meta name="twitter:description" content="this   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。   “http://blog.jobbole.com/39305/“1.当函数作为对象的方法调用时，this指向该对象。    例：var obj= {        x:10,        y:20,        fn:function(){            this.x =">
@@ -246,6 +247,7 @@
 <p>3.构造函数中的this指向创建改函数的对象<br>    例：function fn1(){<br>            var i = 0 ;<br>            var j = 0 ;<br>            this.x=1;<br>             console.log(this)<br>        }<br>    fn2 = new fn1();<br>    fn2 = function(){<br>          this.y=1;<br>          console.log(this)//this指向fn1<br>     }<br>     fn1(fn2) </p>
 <p>4.嵌套函数中的this不会继承上层函数的this，如果需要，可以用一个变量保存上层函数的this。</p>
 <p>再总结的简单点，如果在函数中使用了this，只有在该函数直接被某对象调用时，该this才指向该对象。正常函数的调用，this指的是window，特殊函数的调用，this指象对象。函数声明、匿名函数和函数表达式在全局中调用 this指向window</p>
+<p><img src="http://sudasuta.com/wp-content/uploads/2016/01/Brianwillette-6.jpg" alt="city"></p>
 
       
     </div>
