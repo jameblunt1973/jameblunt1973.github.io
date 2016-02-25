@@ -77,7 +77,7 @@
     &amp;lt;body&amp;gt;
     &amp;lt;/body&amp;gt;
 &amp;lt;/h">
-<meta property="og:updated_time" content="2016-02-25T13:04:09.000Z">
+<meta property="og:updated_time" content="2016-02-25T13:10:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html回顾">
 <meta name="twitter:description" content="html结构 html的基本结构：     doctype的作用：&amp;lt;!DOCTYPE&amp;gt;声明位于文档中的最前的位置，处于标签之前。此标签可告知浏览器文档使用哪种HTML或XHTML规范。
@@ -284,15 +284,19 @@
     &lt;/script&gt;
     &lt;<span class="built_in">meta</span> charset=<span class="string">"uft-8"</span>/&gt;&lt;!--声明编码。--!&gt;
     &lt;<span class="built_in">meta</span> http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge,chrome=1"</span>/&gt;优先使用IE最新版本和Chrome
-    &lt;<span class="built_in">meta</span> name=<span class="string">"renderer"</span> content=<span class="string">"webkit|ie-comp|ie-stand"</span>&gt;浏览器内核控制。国内浏览器很多都是双内核（webkit和trident），webkit内核高速浏览。ie内核兼容网页和旧版本网站。而添加<span class="built_in">meta</span>标签的网站可以控制浏览器选择何种内核渲染。
+    &lt;<span class="built_in">meta</span> name=<span class="string">"renderer"</span> content=<span class="string">"webkit|ie-comp|ie-stand"</span>&gt;
+    浏览器内核控制。国内浏览器很多都是双内核（webkit和trident），webkit内核高速浏览。ie内核兼容网页和旧版本网站。而添加<span class="built_in">meta</span>标签的网站可以控制浏览器选择何种内核渲染。
     &lt;<span class="built_in">meta</span> name=<span class="string">"keywords"</span> content=<span class="string">"your tags关键字内容,"</span>/&gt;页面关键字
     &lt;<span class="built_in">meta</span> name=<span class="string">"descripition"</span> content=<span class="string">"120|150words"</span>/&gt;
-    &lt;<span class="built_in">meta</span> name=<span class="string">"robots"</span> content=<span class="string">"index,follow"</span>/&gt;搜索引擎索引方式。<span class="built_in">all</span>：文件将被索引，且页面上的链接可以被查询；none：文件将不被检索，且页面上的链接不可以被查询；index：文件将被检索；follow：页面上的链接可以被查询；noindex：文件将不被检索；nofollow：页面上的链接不可以被查询。
-    &lt;<span class="built_in">meta</span> http-equiv=<span class="string">"refresh"</span> content=<span class="string">"0; url="</span>/&gt;content内的字数代表时间（秒），即多少时间后刷新，如果加url，则会重定向到指定网页
+    &lt;<span class="built_in">meta</span> name=<span class="string">"robots"</span> content=<span class="string">"index,follow"</span>/&gt;
+    搜索引擎索引方式。<span class="built_in">all</span>：文件将被索引，且页面上的链接可以被查询；none：文件将不被检索，且页面上的链接不可以被查询；index：文件将被检索；follow：页面上的链接可以被查询；noindex：文件将不被检索；nofollow：页面上的链接不可以被查询。
+    &lt;<span class="built_in">meta</span> http-equiv=<span class="string">"refresh"</span> content=<span class="string">"0; url="</span>/&gt;
+    content内的字数代表时间（秒），即多少时间后刷新，如果加url，则会重定向到指定网页
     &lt;<span class="built_in">meta</span> name=<span class="string">"author"</span> content=<span class="string">"author name"</span>/&gt;网页作者信息
     &lt;<span class="built_in">meta</span> name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"</span>/&gt;运用于移动设备的屏幕自适应
     &lt;<span class="built_in">meta</span> name=<span class="string">"apple-mobile-web-app-capable"</span> content=<span class="string">"yes"</span>/&gt;webapp全屏模式：伪装app，离线应用。
-    &lt;<span class="built_in">meta</span> name=<span class="string">"apple-mobile-web-app-status-bar-style"</span> content=<span class="string">"black-translucent"</span>/&gt; content的值为default|black|black-translucent.运用于隐藏状态栏/设置状态栏颜色：只有在开启webapp全屏模式时才生效。
+    &lt;<span class="built_in">meta</span> name=<span class="string">"apple-mobile-web-app-status-bar-style"</span> content=<span class="string">"black-translucent"</span>/&gt; 
+    content的值为default|black|black-translucent.运用于隐藏状态栏/设置状态栏颜色：只有在开启webapp全屏模式时才生效。
     &lt;<span class="built_in">meta</span> name=<span class="string">"apple-mobile-web-app-title"</span> content=<span class="string">"标题"</span>&gt;content的值为default|black|black-translucent.
     &lt;<span class="built_in">meta</span> content=<span class="string">"telephone=no"</span> name=<span class="string">"format-detection"</span>/&gt;忽略数字自动识别为电话号码。
     &lt;<span class="built_in">meta</span> content=<span class="string">"email=no"</span> name=<span class="string">"format-detection/"</span>&gt;
@@ -381,8 +385,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="URL:/images/avatar.jpg"
-               alt="我就是我，不一样的苹果。" />
-          <p class="site-author-name" itemprop="name">我就是我，不一样的苹果。</p>
+               alt="我就是我，不一样的水果。" />
+          <p class="site-author-name" itemprop="name">我就是我，不一样的水果。</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
@@ -450,7 +454,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">我就是我，不一样的苹果。</span>
+  <span class="author" itemprop="copyrightHolder">我就是我，不一样的水果。</span>
 </div>
 
 <div class="powered-by">
