@@ -1,0 +1,1047 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="这是一个博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端小站">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="前端小站">
+<meta property="og:description" content="这是一个博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端小站">
+<meta name="twitter:description" content="这是一个博客">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 前端小站 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-hk">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端小站</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">好站</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+
+    
+
+    
+    
+      
+      
+        
+        
+        
+      
+
+      
+    
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/25/闭包-1/" itemprop="url">
+                  闭包
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-02-25T15:57:33+08:00" content="2016-02-25">
+              2016-02-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="for循环中遍历不到i值的解决方法。也就是闭包的问题。">for循环中遍历不到i值的解决方法。也就是闭包的问题。</h2><pre><code><span class="keyword">for</span>获取值的问题（闭包）
+</code></pre><p> for(var i=0;i&lt;a.length;i++){}在循环内的数值，变化是把i遍历了一边。<br> 在循环外得到的值是循环结束后的值。</p>
+<h3 id="1、将变量i保存在每个段落对象（p）上。如果在循环下出现点击事件函数，函数中获取不到i的遍历值。需要给点击事件增加一个属性">1、将变量i保存在每个段落对象（p）上。如果在循环下出现点击事件函数，函数中获取不到i的遍历值。需要给点击事件增加一个属性</h3><p>   来保存遍历的i值。在点击事件中使用时，需要用到this（需要分清此时的this指向的那个<br>对象）。例：</p>
+<pre><code><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;a.length;i++)<span class="comment">{
+    a[i].index=i;
+    // console.log(a)
+    a[i].onclick=function(){
+        console.log(a[i])//a[i]获取不到。this指向单个p；
+        }</span>
+    }
+</code></pre><h3 id="2、如果在循环下面出现函数时，获取遍历值时，函数的执行需要在for循环下才能遍历到i的值">2、如果在循环下面出现函数时，获取遍历值时，函数的执行需要在for循环下才能遍历到i的值</h3><pre><code>例：
+<span class="keyword">var</span> a=<span class="built_in">document</span>.querySelectorAll(<span class="string">'p'</span>);
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;a.length;i++){
+    <span class="built_in">console</span>.log(i)    
+    <span class="function"><span class="keyword">function</span> <span class="title">woqu</span> (<span class="params"></span>)</span>{
+     <span class="built_in">console</span>.log(i)
+    }
+    woqu()<span class="comment">//在此处执行函数时，可以遍历到i的值</span>
+}
+woqu()<span class="comment">//在此处执行函数时，不可以遍历到i的值</span>
+</code></pre><h3 id="3、加一层闭包，i以函数参数形式传递给内层函数。">3、加一层闭包，i以函数参数形式传递给内层函数。</h3><pre><code>例： 
+<span class="keyword">var</span> a=<span class="built_in">document</span>.querySelectorAll(<span class="string">'p'</span>);
+    <span class="built_in">console</span>.log(a)
+        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;a.length;i++){            
+        (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>{
+            a[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                <span class="built_in">console</span>.log(a[i])
+            };
+        })(i);
+    }
+</code></pre><h3 id="4、加一层闭包，i以局部变量形式传给内存函数。">4、加一层闭包，i以局部变量形式传给内存函数。</h3><pre><code>例：
+<span class="keyword">var</span> a=<span class="built_in">document</span>.querySelectorAll(<span class="string">'p'</span>);
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;a.length;i++){
+    (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">var</span> temp=i;        
+        a[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            <span class="built_in">console</span>.log(temp)
+            <span class="built_in">console</span>.log(i)
+        }
+    })()
+}
+</code></pre><p>以上就是闭包问题的几种方法，当然还有其他的方法。找到一个合适自己的使用吧</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/25/html知识总结/" itemprop="url">
+                  html知识总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-02-25T15:50:14+08:00" content="2016-02-25">
+              2016-02-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="html标签">html标签</h1>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/05/this/" itemprop="url">
+                  this
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2015-12-05T17:18:43+08:00" content="2015-12-05">
+              2015-12-05
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="this">this</h2><p>   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。<br>   “<a href="http://blog.jobbole.com/39305/" target="_blank" rel="external">http://blog.jobbole.com/39305/</a>“<br>1.当函数作为对象的方法调用时，this指向该对象。<br>    例：var obj= {<br>        x:10,<br>        y:20,<br>        fn:function(){<br>            this.x = 20;<br>            console.log(this)//this指向obj<br>        }<br>    }<br>    fn()<br>2.当函数作为弹出函数调用时，this指向全局对象（严格模式时，为undefined）</p>
+<p>3.构造函数中的this指向创建改函数的对象<br>    例：function fn1(){<br>            var i = 0 ;<br>            var j = 0 ;<br>            this.x=1;<br>             console.log(this)<br>        }<br>    fn2 = new fn1();<br>    fn2 = function(){<br>          this.y=1;<br>          console.log(this)//this指向fn1<br>     }<br>     fn1(fn2) </p>
+<p>4.嵌套函数中的this不会继承上层函数的this，如果需要，可以用一个变量保存上层函数的this。</p>
+<p>再总结的简单点，如果在函数中使用了this，只有在该函数直接被某对象调用时，该this才指向该对象。正常函数的调用，this指的是window，特殊函数的调用，this指象对象。函数声明、匿名函数和函数表达式在全局中调用 this指向window</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/11/25/js作用域/" itemprop="url">
+                  js变量的作用域
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2015-11-25T16:59:17+08:00" content="2015-11-25">
+              2015-11-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="浏览器对js文件的解析机制">浏览器对js文件的解析机制</h1><pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{};
+fn();
+<span class="built_in">console</span>.log(i);
+<span class="keyword">var</span> i=<span class="number">10</span>;
+<span class="keyword">var</span> k=<span class="number">20</span>;
+<span class="built_in">console</span>.log(k);
+首先，浏览器在解析这段代码前，是先把代码中的变量 i和k放到了代码最前面。还有函数表达式。
+上例：
+ <span class="keyword">var</span> i ;
+ <span class="keyword">var</span> k ;
+ <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{};
+ fn();
+ <span class="built_in">console</span>.log(i);<span class="comment">//此处的console.log(i) 的结果是undefind；从执行循序来看是无法获取到i的值的。</span>
+ i=<span class="number">10</span>;
+ k=<span class="number">20</span>;
+ <span class="built_in">console</span>.log(k);<span class="comment">//此处k的值就是打印出来就是 20；从执行顺序来看，可以获取到k的值。</span>
+</code></pre><p>#变量的作用域</p>
+<h2 id="函数的书写形式">函数的书写形式</h2><pre><code>要想了解变量的作用域需要先明白创建函数的三种形式
+声明函数是使用<span class="function"><span class="keyword">function</span>关键字+函数名来声明的函数</span>
+例：
+    <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span>{</span>
+
+    };
+函数表达式是使用<span class="function"><span class="keyword">function</span>关键字，但没有函数名，把函数赋值给一个变量的函数。</span>
+例：
+        var <span class="built_in">i</span> = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+
+        };
+匿名函数是直接使用关键字来声明的函数的。
+例：
+    <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+    };
+函数表达式和声明函数的区别：
+ 函数表达式可以直接使用()操作符。()表示立即执行。声明函数不可以直接使用。
+ 想要使用的话，可以先把声明函数包装为函数表达式的形式。可以在对声明函数添加+、-、（）等符号。推荐使用().
+ 例：声明函数包装为函数表达式，使用();
+        (<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+             console.<span class="built_in">log</span>(<span class="string">'嘿嘿！'</span>)
+        })();
+         函数表达式使用();
+         a = <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span>{</span>
+             console.<span class="built_in">log</span>(<span class="string">'啊，你是嘿嘿呀！'</span>)
+         }();
+</code></pre><h2 id="作用域">作用域</h2><pre><code>首先了解下全局变量和局部变量。
+    在js中 使用 <span class="keyword">var</span> 的定义的变量叫做局部变量。直接定义的变量就是全局变量。
+例：
+ <span class="keyword">var</span> i＝ <span class="number">10</span>; i 这个变量就是局部变量
+  i＝ <span class="number">10</span> ; i 这个变量就是全局变量
+变量的作用域
+    例<span class="number">1</span>：
+     <span class="keyword">var</span> a = <span class="number">10</span>;<span class="comment">//a 是局部变量，如果它没有在function中，它的作用域就是整个js；</span>
+      b = <span class="number">20</span>; <span class="comment">// b是全局变量，作用域是整个js；</span>
+     <span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>)</span>{
+         <span class="keyword">var</span> c =<span class="number">30</span> ; <span class="comment">//c是局部变量，它的作用域是在fn函数下。</span>
+         <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
+             i = <span class="number">40</span>; <span class="comment">//i 是全局变量，它的作用域是在整个js下。</span>
+             <span class="keyword">var</span> c ＝ <span class="number">40</span> ;<span class="comment">//c 是局部变量，它的作用域是在fn1下。</span>
+             <span class="keyword">var</span> d = <span class="number">50</span>;  <span class="comment">//d 是局部变量，它的作用域是在fn1下。</span>
+             <span class="built_in">console</span>.log(a);
+                }
+         fn1();
+
+     }
+     fn()
+     例<span class="number">2</span>：
+     <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{
+         <span class="keyword">var</span> c=<span class="number">30</span>;
+         <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
+          <span class="built_in">console</span>.log(c)<span class="comment">//此时c的值就使它父级function的c的值30；</span>
+         }
+     }
+ 小结;当变量是全局变量时，不论变量有没有在<span class="function"><span class="keyword">function</span>下，变量的作用域都是整个<span class="title">js</span>。当变量定义为局部变量时，
+ 如果变量没有在<span class="title">function</span>下，它的作用域就是整个<span class="title">js</span>。如果在<span class="title">function</span>下，就作用域这个<span class="title">function</span>。
+ 如果在<span class="title">function</span>下有使用变量，却没有定义时，
+ 就往上找到它的父级<span class="title">function</span>，继承它父级<span class="title">function</span>的值。</span>
+</code></pre><h2 id="函数的使用方法拓展">函数的使用方法拓展</h2><h3 id="在外部使用函数内部的变量">在外部使用函数内部的变量</h3><pre><code>例<span class="number">1</span>：
+  <span class="keyword">var</span>  j=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+          <span class="keyword">var</span> max = <span class="number">10</span>;
+          <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            <span class="keyword">return</span> <span class="number">1</span>;
+          }()
+  }        
+ <span class="keyword">var</span> a = j ();<span class="comment">//把值赋予a 方便调用。</span>
+ <span class="built_in">console</span>.log(j());
+ 例<span class="number">2</span>：
+ <span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>)</span>{
+         <span class="keyword">var</span> max = <span class="number">10</span>;
+         <span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>{
+              <span class="keyword">if</span>(num&gt;max){
+                  <span class="built_in">console</span>.log(max);
+                  <span class="built_in">console</span>.log(num);
+
+              }
+
+         }
+         <span class="keyword">return</span> fn2;<span class="comment">//fn2 是fn函数的返回值</span>
+  }
+     <span class="keyword">var</span> news=fn();<span class="comment">//fn()是等于fn2的。</span>
+     news(<span class="number">30</span>);<span class="comment">//news 调用的是fn2</span>
+</code></pre><h3 id="计算函数参数值的和的方法">计算函数参数值的和的方法</h3><pre><code>      例<span class="number">1</span>：<span class="function">function <span class="title">jisuan</span><span class="params">()</span></span>{
+      var fuhao = arguments[arguments.length-<span class="number">1</span>];
+
+    <span class="comment">// var  changdu = arguments.length;</span>
+
+    <span class="keyword">if</span>(fuhao==<span class="string">'+'</span>){
+        <span class="keyword">for</span>(var i= <span class="number">1</span> ;i&lt;arguments.length-<span class="number">1</span>;i++){
+
+            arguments[<span class="number">0</span>]+=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+        } <span class="keyword">else</span> <span class="keyword">if</span> (fuhao==<span class="string">'-'</span>) {
+        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
+            arguments[<span class="number">0</span>]-=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+    } <span class="keyword">else</span> <span class="keyword">if</span> (fuhao==<span class="string">'*'</span>){
+        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
+            arguments[<span class="number">0</span>]*=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+    }<span class="keyword">else</span> <span class="keyword">if</span> (fuhao=<span class="string">'/'</span>) {
+        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
+            arguments[<span class="number">0</span>]/=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+       }
+
+};
+jisuan(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="string">'+'</span>);
+console.<span class="built_in">log</span>(jisuan(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="string">'+'</span>));
+console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'-'</span>));
+console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'*'</span>));
+console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'/'</span>));
+</code></pre>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/11/25/html和css的小结/" itemprop="url">
+                  html和css知识总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2015-11-25T16:08:29+08:00" content="2015-11-25">
+              2015-11-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一、html">一、html</h1><h2 id="1、元素：">1、元素：</h2><pre><code>html就是由各种各样的html元素构成的文本文件。
+元素与标签的区别例：
+<span class="tag">&lt;<span class="title">p</span>&gt;</span>这是一个p标签
+<span class="tag">&lt;<span class="title">p</span>&gt;</span>这是内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>，这就是一个元素，元素是由一个开始和结束的标签组成的，用来包含某些内容。
+</code></pre><h2 id="2、标签：">2、标签：</h2><pre><code>标签可以分为块级、行级标签和内联标签
+</code></pre><h3 id="块级标签的特征：">块级标签的特征：</h3><pre><code><span class="number">1</span>、默认独占一行
+<span class="number">2</span>、支持定义宽高。没有宽高时，默认撑满一排
+<span class="number">3</span>、支持所有css命令
+</code></pre><h3 id="行级标签的特征">行级标签的特征</h3><pre><code><span class="number">1</span>、同排可以继续跟同类的标签
+<span class="number">2</span>、内容撑开高度
+<span class="number">3</span>、不支持宽高
+<span class="number">4</span>、不支持上下的margin和padding
+<span class="number">5</span>、代码换行被解析
+</code></pre><h3 id="内联块标签的特征：">内联块标签的特征：</h3><pre><code><span class="number">1</span>、具有行级标签的属性
+<span class="number">2</span>、可以设置宽高
+</code></pre><h3 id="块级标签主要有：">块级标签主要有：</h3><pre><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span> 
+       双标签；可以把内容分割为独立的、不同的部分。
+       <span class="tag">&lt;<span class="title">h1</span>&gt;</span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span> <span class="tag">&lt;<span class="title">h2</span>&gt;</span><span class="tag">&lt;/<span class="title">h2</span>&gt;</span> <span class="tag">&lt;<span class="title">h3</span>&gt;</span><span class="tag">&lt;/<span class="title">h3</span>&gt;</span> <span class="tag">&lt;<span class="title">h4</span>&gt;</span><span class="tag">&lt;/<span class="title">h4</span>&gt;</span> <span class="tag">&lt;<span class="title">h5</span>&gt;</span><span class="tag">&lt;/<span class="title">h5</span>&gt;</span> <span class="tag">&lt;<span class="title">h6</span>&gt;</span><span class="tag">&lt;/<span class="title">h6</span>&gt;</span> 
+       双标签；这用来定义标题的标签。<span class="tag">&lt;<span class="title">h1</span>&gt;</span>用来定义最大的标题。<span class="tag">&lt;<span class="title">h6</span>&gt;</span>用来定义最小的标题。默认属性；margin、font-wight、font-size
+<span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>  
+       双标签；用来定义文章段落、内容。默认属性；margin
+       <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+           <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+       <span class="tag">&lt;/<span class="title">ul</span>&gt;</span> 
+       双标签；<span class="tag">&lt;<span class="title">ul</span>&gt;</span>、<span class="tag">&lt;<span class="title">li</span>&gt;</span>标签定义无序列表，必须组合使用。不可嵌套其他标签，如果要嵌套，必须在子级的li中嵌套。默认属性；margin、padding-left、list-style-type
+       <span class="tag">&lt;<span class="title">ol</span>&gt;</span>
+           <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+       <span class="tag">&lt;/<span class="title">ol</span>&gt;</span>
+        双标签；<span class="tag">&lt;<span class="title">ol</span>&gt;</span>、<span class="tag">&lt;<span class="title">li</span>&gt;</span>标签定义有序列表，必须组合使用。不可嵌套其他标签，如果嵌套，必须在子级的li中嵌套。默认属性；margin、padding-left、list-style-type
+</code></pre><h3 id="行级标签主要有：">行级标签主要有：</h3><pre><code><span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+双标签；表示没有意义的内容；没有默认属性
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.baidu.com"</span> <span class="attribute">target</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+双标签；表示链接;target="blank"表示在新窗口打开链接 target="self"表示在当前窗口打开链接，为默认值。默认值有：text-decoration
+<span class="tag">&lt;<span class="title">a</span>&gt;</span>标签的四种状态：1、a:link 表示未被访问的链接 2、a:visited 表示已被访问的链接 3、a:hover 表示鼠标指针移动到链接上 4、a:active 表示正在被点击的链接
+<span class="tag">&lt;<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+双标签；表示强调；默认属性：font-weight
+<span class="tag">&lt;<span class="title">em</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span>
+双标签；默认属性：font-style：intalic;
+</code></pre><h3 id="内联块标签主要有：">内联块标签主要有：</h3><pre><code>     <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"路径"</span><span class="value">alt="描述"</span>/&gt;</span>
+     单标签；表示图片；
+     <span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">"url"</span> <span class="attribute">method</span>=<span class="value">"get"</span> <span class="attribute">target</span>=<span class="value">"-self"</span>&gt;</span><span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+     method属性有get/post target属性self/blank
+     <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"文本"</span> <span class="attribute">value</span>=<span class="value">""</span>/&gt;</span>
+     用于账号的输入
+     <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">name</span>=<span class="value">"mima"</span> <span class="attribute">value</span>=<span class="value">""</span>/&gt;</span>
+     用账号的密码输入
+     <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">value</span>=<span class="value">""</span> <span class="attribute">checked</span>=<span class="value">"check"</span>/&gt;</span>
+   用于复选框
+   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">value</span>=<span class="value">"nan"</span> <span class="attribute">name</span>=<span class="value">""</span>/&gt;</span>
+   用于单选框
+   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"file"</span>/&gt;</span>
+   用于文件上传
+   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"按钮"</span>/&gt;</span>
+   用于创建按钮
+   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"reset"</span> <span class="attribute">value</span>=<span class="value">"重置"</span>/&gt;</span>
+   设置按钮为重置按钮
+   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"提交"</span>/&gt;</span>
+   设置按钮为提交按钮
+   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">value</span>=<span class="value">"存储数据使用"</span>/&gt;</span>
+   <span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">value</span>=<span class="value">""</span> <span class="attribute">name</span>=<span class="value">""</span>&gt;</span>我是文本框<span class="tag">&lt;/<span class="title">textarae</span>&gt;</span>
+   论坛类的留言框
+<span class="tag">&lt;<span class="title">select</span>&gt;</span>
+           <span class="tag">&lt;<span class="title">option</span>&gt;</span>12<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+           <span class="tag">&lt;<span class="title">option</span>&gt;</span>13<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+           <span class="tag">&lt;<span class="title">option</span>&gt;</span>14<span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+   <span class="tag">&lt;/<span class="title">select</span>&gt;</span>
+   列表数据选择。一般用于闹钟
+   <span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">width</span>=<span class="value">""</span> <span class="attribute">height</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">iframe</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">dl</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">dt</span>&gt;</span>我们是列表标题<span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">dd</span>&gt;</span>我们是列表内容<span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">dd</span>&gt;</span>我们是列表内容<span class="tag">&lt;/<span class="title">dd</span>&gt;</span>        
+  <span class="tag">&lt;/<span class="title">dl</span>&gt;</span>
+ 例：
+ <span class="tag">&lt;<span class="title">dl</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">dt</span>&gt;</span>城市<span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">dd</span>&gt;</span>北京<span class="tag">&lt;/<span class="title">dd</span>&gt;</span>    
+     <span class="tag">&lt;<span class="title">dd</span>&gt;</span>上海<span class="tag">&lt;/<span class="title">dd</span>&gt;</span>        
+ <span class="tag">&lt;/<span class="title">dl</span>&gt;</span>
+</code></pre><h3 id="标签属性的转换">标签属性的转换</h3><pre><code><span class="attribute">display </span>: block; 显示为块级标签
+<span class="attribute">display </span>: in-line; 显示为行级标签
+<span class="attribute">display </span>: none; 显示为无
+</code></pre><h1 id="二、css的样式">二、css的样式</h1><pre><code>待整理<span class="attribute">...</span><span class="attribute">...</span><span class="attribute">...</span><span class="attribute">...</span><span class="attribute">...</span>
+</code></pre><p><a href="jameblunt1973.github.io">blog</a><br><img src="http://att2.citysbs.com/hangzhou/image/day_081219/20081219_92ea5b9189660d5f6cb49F31n3xz8G2P.jpg" alt="小和尚"><br><img src="http://img1.3lian.com/2015/w4/73/d/61.jpg" alt="小道士"></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="我就是我，不一样的苹果。" />
+          <p class="site-author-name" itemprop="name">我就是我，不一样的苹果。</p>
+          <p class="site-description motion-element" itemprop="description">这是一个博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+          
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">我就是我，不一样的苹果。</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
