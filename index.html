@@ -189,15 +189,6 @@
 
     
     
-      
-      
-        
-        
-        
-      
-
-      
-    
 
     
       
@@ -221,7 +212,189 @@
             
               
                 
-                <a class="post-title-link" href="/2016/02/25/闭包-1/" itemprop="url">
+                <a class="post-title-link" href="/2016/02/26/css小结/" itemprop="url">
+                  css小结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-26T09:30:36+08:00" content="2016-02-26">
+              2016-02-26
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="css盒模型：">css盒模型：</h1><pre><code><span class="attribute">margin</span> <span class="attribute">padding</span> <span class="attribute">border</span> 
+</code></pre><h1 id="css标签的默认值和属性">css标签的默认值和属性</h1><pre><code><span class="tag">div</span>:
+<span class="tag">a</span><span class="pseudo">:link </span>hover visit active
+<span class="tag">img</span>:<span class="attribute">background-size</span>,<span class="attribute">background-position</span>
+</code></pre><h1 id="浮动和清除浮动的方法">浮动和清除浮动的方法</h1><pre><code><span class="attribute">float</span>:<span class="attribute">left</span>,<span class="attribute">right</span>.
+<span class="attribute">overflow</span>:hidden
+<span class="attribute">clear</span>:both
+</code></pre><h1 id="定位">定位</h1><pre><code>相对定位：<span class="tag">position</span><span class="pseudo">:relative</span>
+绝对定位：<span class="tag">position</span><span class="pseudo">:absolute</span>
+固定定位：<span class="tag">position</span><span class="pseudo">:fixed</span>
+</code></pre><h1 id="引入css的3中方式">引入css的3中方式</h1><pre><code>外部样式、行间样式、内联样式&lt;br&gt;
+优缺点，格式，权重
+内联：优先级高，不会被覆盖，不会产生再次请求。不利于代码维护。没有样式内容分离。
+行间样式：style 位于head 试用于单页面开发，
+外部样式：<span class="keyword">link</span> 内容 样式 行为 分离。代码复用。利于维护。
+会增加请求次数。
+<span class="keyword">reset</span>.css/publice.css
+<span class="variable">@import</span> url 引入方式，不常用
+</code></pre><h1 id="css构成">css构成</h1><pre><code>一般由选择器，属性和属性值构成
+例：<span class="tag">div</span><span class="rules">{
+        <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100px</span></span></span>;
+        <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">100px</span></span></span>;
+    }</span>
+如果值为若干个单词，则要给值加引号;
+例：<span class="tag">p</span><span class="rules">{<span class="rule"><span class="attribute">font-family</span>:<span class="value"><span class="string">"sans serif"</span></span></span>;}</span>
+</code></pre><h1 id="css选择器">css选择器</h1><p>1、统配选择器：</p>
+<pre><code><span class="keyword">*</span>
+</code></pre><p>2、元素选择器：</p>
+<pre><code><span class="keyword">div</span><span class="regexp">/a/</span>h1<span class="regexp">/p/</span>span{color:red}
+</code></pre><p>3、id选择器：</p>
+<pre><code><span class="id">#id</span>名<span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span>;}</span>
+</code></pre><p>4、类选择器：</p>
+<pre><code>.类名<span class="rules">{<span class="rule"><span class="attribute">fot-size</span>:<span class="value"><span class="number">12px</span></span></span>;}</span>
+</code></pre><p>5、属性选择器：</p>
+<pre><code><span class="tag">a</span><span class="attr_selector">[属性值：href/title/src/url]</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span>;}</span>一般用于<span class="tag">input</span>标签
+</code></pre><p>6、后代选择器:</p>
+<pre><code><span class="tag">div</span> <span class="tag">a</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span>;}</span>
+</code></pre><p>7、子元素选择器：</p>
+<pre><code><span class="tag">h1</span> &gt; <span class="tag">em</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">green</span></span>;}</span>.只作用于某个元素的子元素。
+</code></pre><p>8、兄弟选择器:</p>
+<pre><code><span class="tag">h1</span> + <span class="tag">p</span> <span class="rules">{<span class="rule"><span class="attribute">margin-top</span>:<span class="value"><span class="number">50px</span></span></span>;}</span>.同一个父级，<span class="tag">h1</span>和<span class="tag">p</span>是相邻的元素。
+</code></pre><p>9、nth选择器：</p>
+<pre><code><span class="function"><span class="title">nth-child</span><span class="params">()</span></span>,<span class="function"><span class="title">nth-first-child</span><span class="params">()</span></span>,<span class="function"><span class="title">nth-last-child</span><span class="params">()</span></span>
+</code></pre><p>10、状态选择器：</p>
+<pre><code><span class="tag">focus</span>,<span class="tag">checked</span>,<span class="tag">enabled</span>,<span class="tag">disabled</span> 例：<span class="tag">input</span><span class="attr_selector">[type="text"]</span><span class="pseudo">:disabled</span> <span class="rules">{ <span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#ddd</span></span></span>;}</span>
+</code></pre><p>11、伪元素选择器：</p>
+<pre><code><span class="keyword">E</span>::first-<span class="keyword">line</span> 匹配<span class="keyword">E</span>元素的第一行
+<span class="keyword">E</span>::first-letter 匹配<span class="keyword">E</span>元素的第一个字母
+<span class="keyword">E</span>::before 在<span class="keyword">E</span>元素之前插入生成的内容
+<span class="keyword">E</span>::after 在<span class="keyword">E</span>元素之后插入生成的内容
+</code></pre><p>12、伪类选择器：</p>
+<pre><code><span class="tag">a</span><span class="pseudo">:link</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span></span>} 未被访问的链接
+<span class="tag">a</span><span class="pseudo">:visited</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">green</span></span></span>} 已被访问的链接
+<span class="tag">a</span><span class="pseudo">:hover</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">black</span></span></span>} 鼠标移动到链接上
+<span class="tag">a</span><span class="pseudo">:active</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">glod</span></span></span>} 选的的链接
+</code></pre><p>13、分组选择器：</p>
+<pre><code>偏重代码优化，对于重复的代码合并到一块。
+</code></pre><p>选择器的优先级：id &gt;class&gt;标签</p>
+<pre><code><span class="change">!important</span>
+</code></pre><p>属性的继承</p>
+<pre><code>可继承属性：<span class="attribute">line-height</span> <span class="attribute">color</span> <span class="attribute">font</span> <span class="attribute">font-family</span> <span class="attribute">font-size</span> <span class="attribute">font-style</span> <span class="attribute">font-variant</span>
+不可继承属性：<span class="attribute">display</span> <span class="attribute">margin</span> <span class="attribute">border</span> <span class="attribute">padding</span> <span class="attribute">background</span> <span class="attribute">width</span> <span class="attribute">height</span> <span class="attribute">overflow</span> <span class="attribute">position</span> <span class="attribute">left</span> <span class="attribute">right</span> <span class="attribute">top</span> <span class="attribute">right</span> <span class="attribute">top</span> <span class="attribute">bottom</span> <span class="attribute">z-index</span> <span class="attribute">float</span> 
+</code></pre><p>颜色值</p>
+<pre><code>red green 等英文单词
+<span class="preprocessor">#<span class="number">0000</span> #号加<span class="number">16</span>进制的数字</span>
+rgb：red green blue
+&lt;img src=<span class="string">"http://p3.pstatp.com/large/23b00095416e3d2f534"</span>/&gt;
+rgba: red green blue a代表透明度，取值<span class="number">0</span>~<span class="number">1</span>之间
+hsl (IE8-浏览器不支持) HSL模式是通过对色调(H)、饱和度(S)、亮度(L)三个颜色通道的变化以及它们相互的叠加得到各式各样的颜色。HSL标准几乎可以包括人类视力所能感知的所有颜色.h:色调(hue)可以为任意整数。<span class="number">0</span>(或<span class="number">360</span>或-<span class="number">360</span>)表示红色，<span class="number">60</span>表示黄色，<span class="number">120</span>表示绿色，<span class="number">180</span>表示青色，<span class="number">240</span>表示蓝色，<span class="number">300</span>表示洋红(当h值大于<span class="number">360</span>时，实际的值等于该值模<span class="number">360</span>后的值).s:饱和度(saturation)，就是指颜色的深浅度和鲜艳程度。取<span class="number">0</span>-<span class="number">100</span>%范围的值，其中<span class="number">0</span>表示灰度(没有该颜色)，<span class="number">100</span>%表示饱和度最高(颜色最鲜艳).l:亮度(lightness)，取<span class="number">0</span>-<span class="number">100</span>%范围的值，其中<span class="number">0</span>表示最暗(黑色)，<span class="number">100</span>%表示最亮(白色)
+</code></pre><p><img src="http://p1.pstatp.com/large/25a000cd7db6b60cf59"><br><img src="http://p3.pstatp.com/large/25a000cd7e117b4c2c0"></p>
+<pre><code><span class="function"><span class="title">hsla</span> <span class="params">(<span class="variable">IE8</span>-浏览器不支持)</span>HSLA模式是HSL的扩展模式，在HSL的基础上增加一个透明通道<span class="title">alpha</span>来设置透明度</span>
+</code></pre><p>单位：</p>
+<pre><code>px 具体单位 像素
+百分比 单位根据父级
+em 单位被定义为当前字体大小 根据body 例如：bidy{font-size:<span class="number">14</span>px} 单位变化根据父级来改变
+ <span class="comment">rem root em 基于根元素html进行设置 </span>
+ vh/vm 视窗单位 h等于viewport高度的<span class="number">1</span>/<span class="number">100</span>.例如，如果浏览器的高是<span class="number">900</span>px,<span class="number">1</span>vh求得的值为<span class="number">9</span>px。同理，如果显示窗口宽度为<span class="number">750</span>px,<span class="number">1</span>vw求得的值为<span class="number">7</span>.<span class="number">5</span>px
+</code></pre><p>line-height</p>
+<pre><code>可以用来居中
+</code></pre><p>font</p>
+<pre><code>设置字体样式
+</code></pre><p>BFC</p>
+<pre><code>BFC全称”<span class="keyword">Block</span> Formatting <span class="keyword">Context</span>”, 中文为“块级格式化上下文”
+</code></pre><p>BFC的生成</p>
+<pre><code>满足下列css声明之一的元素便会生成BFC。
+根元素：<span class="tag">html</span> 就是一个大的bfc
+<span class="attribute">float</span>的值不为<span class="attribute">none</span>
+<span class="attribute">overflow</span>的值不为<span class="value">visible</span>
+<span class="attribute">display</span>的值为<span class="value">inline</span>-<span class="value">block</span>、<span class="tag">table</span>-cell、<span class="tag">table</span>-<span class="tag">caption</span>
+<span class="attribute">position</span>的值为<span class="value">absolute</span>或<span class="value">fixed</span>
+</code></pre><p>BFC的约束规则</p>
+<pre><code>生成<span class="keyword">BFC元素的子元素会一个接一个的放置。垂直方向上他们的起点是一个包含块的顶部，两个相邻子元素之间的垂直距离取决于元素的margin特性。在BFC中相邻的块级元素外边距会折叠。
+</span>生成<span class="keyword">BFC元素的子元素中，每一个子元素做外边距与包含块的左边界相接触，（对于从右到左的格式化，右外边距接触右边界），即使浮动元素也是如此（尽管子元素的内容区域会由于浮动而压缩），除非这个子元素也创建了一个新的BFC（如它自身也是一个浮动元素）。
+</span>内部的<span class="keyword">Box会在垂直方向上一个接一个的放置
+</span>垂直方向上的距离由<span class="keyword">margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠，与方向无关。）
+</span>每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明<span class="keyword">BFC中子元素不会超出他的包含块，而 </span>   position为absolute的元素可以超出他的包含块边界）
+<span class="keyword">BFC的区域不会与float的元素区域重叠
+</span>计算<span class="keyword">BFC的高度时，浮动子元素也参与计算
+</span><span class="keyword">BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然</span>
+</code></pre>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/25/闭包/" itemprop="url">
                   闭包
                 </a>
               
@@ -326,6 +499,618 @@ woqu()<span class="comment">//在此处执行函数时，不可以遍历到i的�
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/25/html回顾/" itemprop="url">
+                  html回顾
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-25T15:50:14+08:00" content="2016-02-25">
+              2016-02-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="html结构">html结构</h2><p> html的基本结构：<br>     doctype的作用：&lt;!DOCTYPE&gt;声明位于文档中的最前的位置，处于<html>标签之前。此标签可告知浏览器文档使用哪种HTML或XHTML规范。</html></p>
+<p> html的基本结构：</p>
+<pre><code><span class="tag">&lt;html&gt;</span>
+    <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;/head&gt;</span>
+    <span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+</code></pre><h2 id="html标签">html标签</h2><pre><code><span class="number">1</span>、&lt;html&gt;是根标签
+<span class="number">2</span>、&lt;head&gt;标签是头文件。里边有:
+    &lt;title&gt;标题&lt;/title&gt;
+    &lt;link rel=<span class="string">"stylesheet"</span> src=<span class="string">"css文件路径"</span>/&gt;
+    &lt;style&gt;
+    行间样式
+    &lt;/style&gt;
+    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"js文件路径"</span>&gt;&lt;/script&gt;
+    &lt;script&gt;
+     行间样式
+    &lt;/script&gt;
+    &lt;<span class="built_in">meta</span> charset=<span class="string">"uft-8"</span>/&gt;&lt;!--声明编码。--!&gt;
+    &lt;<span class="built_in">meta</span> http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge,chrome=1"</span>/&gt;优先使用IE最新版本和Chrome
+    &lt;<span class="built_in">meta</span> name=<span class="string">"renderer"</span> content=<span class="string">"webkit|ie-comp|ie-stand"</span>&gt;
+    浏览器内核控制。国内浏览器很多都是双内核（webkit和trident），webkit内核高速浏览。ie内核兼容网页和旧版本网站。而添加<span class="built_in">meta</span>标签的网站可以控制浏览器选择何种内核渲染。
+    &lt;<span class="built_in">meta</span> name=<span class="string">"keywords"</span> content=<span class="string">"your tags关键字内容,"</span>/&gt;页面关键字
+    &lt;<span class="built_in">meta</span> name=<span class="string">"descripition"</span> content=<span class="string">"120|150words"</span>/&gt;
+    &lt;<span class="built_in">meta</span> name=<span class="string">"robots"</span> content=<span class="string">"index,follow"</span>/&gt;
+    搜索引擎索引方式。<span class="built_in">all</span>：文件将被索引，且页面上的链接可以被查询；none：文件将不被检索，且页面上的链接不可以被查询；index：文件将被检索；follow：页面上的链接可以被查询；noindex：文件将不被检索；nofollow：页面上的链接不可以被查询。
+    &lt;<span class="built_in">meta</span> http-equiv=<span class="string">"refresh"</span> content=<span class="string">"0; url="</span>/&gt;
+    content内的字数代表时间（秒），即多少时间后刷新，如果加url，则会重定向到指定网页
+    &lt;<span class="built_in">meta</span> name=<span class="string">"author"</span> content=<span class="string">"author name"</span>/&gt;网页作者信息
+    &lt;<span class="built_in">meta</span> name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"</span>/&gt;运用于移动设备的屏幕自适应
+    &lt;<span class="built_in">meta</span> name=<span class="string">"apple-mobile-web-app-capable"</span> content=<span class="string">"yes"</span>/&gt;webapp全屏模式：伪装app，离线应用。
+    &lt;<span class="built_in">meta</span> name=<span class="string">"apple-mobile-web-app-status-bar-style"</span> content=<span class="string">"black-translucent"</span>/&gt; 
+    content的值为default|black|black-translucent.运用于隐藏状态栏/设置状态栏颜色：只有在开启webapp全屏模式时才生效。
+    &lt;<span class="built_in">meta</span> name=<span class="string">"apple-mobile-web-app-title"</span> content=<span class="string">"标题"</span>&gt;content的值为default|black|black-translucent.
+    &lt;<span class="built_in">meta</span> content=<span class="string">"telephone=no"</span> name=<span class="string">"format-detection"</span>/&gt;忽略数字自动识别为电话号码。
+    &lt;<span class="built_in">meta</span> content=<span class="string">"email=no"</span> name=<span class="string">"format-detection/"</span>&gt;
+    以上是可以写在&lt;head&gt;中的标签
+<span class="number">3</span>、&lt;body&gt;里面放置的标签，标签分为块级和行级标签
+  内容参考html和css知识总结部分
+</code></pre><p> <img src="http://sudasuta.com/wp-content/uploads/2016/01/reading-20.jpg" alt="当阅读成为一种习惯"></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/05/js中的this使用/" itemprop="url">
+                  js中的this运用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-05T17:18:43+08:00" content="2015-12-05">
+              2015-12-05
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="this">this</h2><p>   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。<br>   “<a href="http://blog.jobbole.com/39305/" target="_blank" rel="external">http://blog.jobbole.com/39305/</a>“<br>1.当函数作为对象的方法调用时，this指向该对象。<br>    例：var obj= {<br>        x:10,<br>        y:20,<br>        fn:function(){<br>            this.x = 20;<br>            console.log(this)//this指向obj<br>        }<br>    }<br>    fn()<br>2.当函数作为弹出函数调用时，this指向全局对象（严格模式时，为undefined）</p>
+<p>3.构造函数中的this指向创建改函数的对象<br>    例：function fn1(){<br>            var i = 0 ;<br>            var j = 0 ;<br>            this.x=1;<br>             console.log(this)<br>        }<br>    fn2 = new fn1();<br>    fn2 = function(){<br>          this.y=1;<br>          console.log(this)//this指向fn1<br>     }<br>     fn1(fn2) </p>
+<p>4.嵌套函数中的this不会继承上层函数的this，如果需要，可以用一个变量保存上层函数的this。</p>
+<p>再总结的简单点，如果在函数中使用了this，只有在该函数直接被某对象调用时，该this才指向该对象。正常函数的调用，this指的是window，特殊函数的调用，this指象对象。函数声明、匿名函数和函数表达式在全局中调用 this指向window</p>
+<p><img src="http://sudasuta.com/wp-content/uploads/2016/01/Brianwillette-6.jpg" alt="city"></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/11/25/js作用域/" itemprop="url">
+                  js变量的作用域
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-25T16:59:17+08:00" content="2015-11-25">
+              2015-11-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="浏览器对js文件的解析机制">浏览器对js文件的解析机制</h1><pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{};
+fn();
+<span class="built_in">console</span>.log(i);
+<span class="keyword">var</span> i=<span class="number">10</span>;
+<span class="keyword">var</span> k=<span class="number">20</span>;
+<span class="built_in">console</span>.log(k);
+首先，浏览器在解析这段代码前，是先把代码中的变量 i和k放到了代码最前面。还有函数表达式。
+上例：
+ <span class="keyword">var</span> i ;
+ <span class="keyword">var</span> k ;
+ <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{};
+ fn();
+ <span class="built_in">console</span>.log(i);<span class="comment">//此处的console.log(i) 的结果是undefind；从执行循序来看是无法获取到i的值的。</span>
+ i=<span class="number">10</span>;
+ k=<span class="number">20</span>;
+ <span class="built_in">console</span>.log(k);<span class="comment">//此处k的值就是打印出来就是 20；从执行顺序来看，可以获取到k的值。</span>
+</code></pre><p>#变量的作用域</p>
+<h2 id="函数的书写形式">函数的书写形式</h2><pre><code>要想了解变量的作用域需要先明白创建函数的三种形式
+声明函数是使用<span class="function"><span class="keyword">function</span>关键字+函数名来声明的函数</span>
+例：
+    <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span>{</span>
+
+    };
+函数表达式是使用<span class="function"><span class="keyword">function</span>关键字，但没有函数名，把函数赋值给一个变量的函数。</span>
+例：
+        var <span class="built_in">i</span> = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+
+        };
+匿名函数是直接使用关键字来声明的函数的。
+例：
+    <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+    };
+函数表达式和声明函数的区别：
+ 函数表达式可以直接使用()操作符。()表示立即执行。声明函数不可以直接使用。
+ 想要使用的话，可以先把声明函数包装为函数表达式的形式。可以在对声明函数添加+、-、（）等符号。推荐使用().
+ 例：声明函数包装为函数表达式，使用();
+        (<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+             console.<span class="built_in">log</span>(<span class="string">'嘿嘿！'</span>)
+        })();
+         函数表达式使用();
+         a = <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span>{</span>
+             console.<span class="built_in">log</span>(<span class="string">'啊，你是嘿嘿呀！'</span>)
+         }();
+</code></pre><h2 id="作用域">作用域</h2><pre><code>首先了解下全局变量和局部变量。
+    在js中 使用 <span class="keyword">var</span> 的定义的变量叫做局部变量。直接定义的变量就是全局变量。
+例：
+ <span class="keyword">var</span> i＝ <span class="number">10</span>; i 这个变量就是局部变量
+  i＝ <span class="number">10</span> ; i 这个变量就是全局变量
+变量的作用域
+    例<span class="number">1</span>：
+     <span class="keyword">var</span> a = <span class="number">10</span>;<span class="comment">//a 是局部变量，如果它没有在function中，它的作用域就是整个js；</span>
+      b = <span class="number">20</span>; <span class="comment">// b是全局变量，作用域是整个js；</span>
+     <span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>)</span>{
+         <span class="keyword">var</span> c =<span class="number">30</span> ; <span class="comment">//c是局部变量，它的作用域是在fn函数下。</span>
+         <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
+             i = <span class="number">40</span>; <span class="comment">//i 是全局变量，它的作用域是在整个js下。</span>
+             <span class="keyword">var</span> c ＝ <span class="number">40</span> ;<span class="comment">//c 是局部变量，它的作用域是在fn1下。</span>
+             <span class="keyword">var</span> d = <span class="number">50</span>;  <span class="comment">//d 是局部变量，它的作用域是在fn1下。</span>
+             <span class="built_in">console</span>.log(a);
+                }
+         fn1();
+
+     }
+     fn()
+     例<span class="number">2</span>：
+     <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{
+         <span class="keyword">var</span> c=<span class="number">30</span>;
+         <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
+          <span class="built_in">console</span>.log(c)<span class="comment">//此时c的值就使它父级function的c的值30；</span>
+         }
+     }
+ 小结;当变量是全局变量时，不论变量有没有在<span class="function"><span class="keyword">function</span>下，变量的作用域都是整个<span class="title">js</span>。当变量定义为局部变量时，
+ 如果变量没有在<span class="title">function</span>下，它的作用域就是整个<span class="title">js</span>。如果在<span class="title">function</span>下，就作用域这个<span class="title">function</span>。
+ 如果在<span class="title">function</span>下有使用变量，却没有定义时，
+ 就往上找到它的父级<span class="title">function</span>，继承它父级<span class="title">function</span>的值。</span>
+</code></pre><h2 id="函数的使用方法拓展">函数的使用方法拓展</h2><h3 id="在外部使用函数内部的变量">在外部使用函数内部的变量</h3><pre><code>例<span class="number">1</span>：
+  <span class="keyword">var</span>  j=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+          <span class="keyword">var</span> max = <span class="number">10</span>;
+          <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            <span class="keyword">return</span> <span class="number">1</span>;
+          }()
+  }        
+ <span class="keyword">var</span> a = j ();<span class="comment">//把值赋予a 方便调用。</span>
+ <span class="built_in">console</span>.log(j());
+ 例<span class="number">2</span>：
+ <span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>)</span>{
+         <span class="keyword">var</span> max = <span class="number">10</span>;
+         <span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>{
+              <span class="keyword">if</span>(num&gt;max){
+                  <span class="built_in">console</span>.log(max);
+                  <span class="built_in">console</span>.log(num);
+
+              }
+
+         }
+         <span class="keyword">return</span> fn2;<span class="comment">//fn2 是fn函数的返回值</span>
+  }
+     <span class="keyword">var</span> news=fn();<span class="comment">//fn()是等于fn2的。</span>
+     news(<span class="number">30</span>);<span class="comment">//news 调用的是fn2</span>
+</code></pre><h3 id="计算函数参数值的和的方法">计算函数参数值的和的方法</h3><pre><code>      例<span class="number">1</span>：<span class="function">function <span class="title">jisuan</span><span class="params">()</span></span>{
+      var fuhao = arguments[arguments.length-<span class="number">1</span>];
+
+    <span class="comment">// var  changdu = arguments.length;</span>
+
+    <span class="keyword">if</span>(fuhao==<span class="string">'+'</span>){
+        <span class="keyword">for</span>(var i= <span class="number">1</span> ;i&lt;arguments.length-<span class="number">1</span>;i++){
+
+            arguments[<span class="number">0</span>]+=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+        } <span class="keyword">else</span> <span class="keyword">if</span> (fuhao==<span class="string">'-'</span>) {
+        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
+            arguments[<span class="number">0</span>]-=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+    } <span class="keyword">else</span> <span class="keyword">if</span> (fuhao==<span class="string">'*'</span>){
+        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
+            arguments[<span class="number">0</span>]*=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+    }<span class="keyword">else</span> <span class="keyword">if</span> (fuhao=<span class="string">'/'</span>) {
+        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
+            arguments[<span class="number">0</span>]/=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+       }
+
+};
+jisuan(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="string">'+'</span>);
+console.<span class="built_in">log</span>(jisuan(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="string">'+'</span>));
+console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'-'</span>));
+console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'*'</span>));
+console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'/'</span>));
+</code></pre><p>  on the way <img src="http://sudasuta.com/wp-content/uploads/2016/02/Andy-Lee-31.jpg" alt="路"> </p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/11/25/html小结/" itemprop="url">
+                  html和css知识总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-25T16:08:29+08:00" content="2015-11-25">
+              2015-11-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一、html">一、html</h1><h2 id="1、元素：">1、元素：</h2><pre><code>html就是由各种各样的html元素构成的文本文件。
+元素与标签的区别例：
+<span class="tag">&lt;<span class="title">p</span>&gt;</span>这是一个p标签
+<span class="tag">&lt;<span class="title">p</span>&gt;</span>这是内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>，这就是一个元素，元素是由一个开始和结束的标签组成的，用来包含某些内容。
+</code></pre><h2 id="2、标签：">2、标签：</h2><pre><code>标签可以分为块级、行级标签和内联标签
+</code></pre><h3 id="块级标签的特征：">块级标签的特征：</h3><pre><code><span class="number">1</span>、默认独占一行
+<span class="number">2</span>、支持定义宽高。没有宽高时，默认撑满一排
+<span class="number">3</span>、支持所有css命令
+</code></pre><h3 id="行级标签的特征">行级标签的特征</h3><pre><code><span class="number">1</span>、同排可以继续跟同类的标签
+<span class="number">2</span>、内容撑开高度
+<span class="number">3</span>、不支持宽高
+<span class="number">4</span>、不支持上下的margin和padding
+<span class="number">5</span>、代码换行被解析
+</code></pre><h3 id="内联块标签的特征：">内联块标签的特征：</h3><pre><code><span class="number">1</span>、具有行级标签的属性
+<span class="number">2</span>、可以设置宽高
+</code></pre><h3 id="块级标签主要有：">块级标签主要有：</h3><pre><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span> 
+       双标签；可以把内容分割为独立的、不同的部分。
+       <span class="tag">&lt;<span class="title">h1</span>&gt;</span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span> <span class="tag">&lt;<span class="title">h2</span>&gt;</span><span class="tag">&lt;/<span class="title">h2</span>&gt;</span> <span class="tag">&lt;<span class="title">h3</span>&gt;</span><span class="tag">&lt;/<span class="title">h3</span>&gt;</span> <span class="tag">&lt;<span class="title">h4</span>&gt;</span><span class="tag">&lt;/<span class="title">h4</span>&gt;</span> <span class="tag">&lt;<span class="title">h5</span>&gt;</span><span class="tag">&lt;/<span class="title">h5</span>&gt;</span> <span class="tag">&lt;<span class="title">h6</span>&gt;</span><span class="tag">&lt;/<span class="title">h6</span>&gt;</span> 
+       双标签；这用来定义标题的标签。<span class="tag">&lt;<span class="title">h1</span>&gt;</span>用来定义最大的标题。<span class="tag">&lt;<span class="title">h6</span>&gt;</span>用来定义最小的标题。默认属性；margin、font-wight、font-size
+<span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>  
+       双标签；用来定义文章段落、内容。默认属性；margin
+       <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+           <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+       <span class="tag">&lt;/<span class="title">ul</span>&gt;</span> 
+       双标签；<span class="tag">&lt;<span class="title">ul</span>&gt;</span>、<span class="tag">&lt;<span class="title">li</span>&gt;</span>标签定义无序列表，必须组合使用。不可嵌套其他标签，如果要嵌套，必须在子级的li中嵌套。默认属性；margin、padding-left、list-style-type
+       <span class="tag">&lt;<span class="title">ol</span>&gt;</span>
+           <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+       <span class="tag">&lt;/<span class="title">ol</span>&gt;</span>
+        双标签；<span class="tag">&lt;<span class="title">ol</span>&gt;</span>、<span class="tag">&lt;<span class="title">li</span>&gt;</span>标签定义有序列表，必须组合使用。不可嵌套其他标签，如果嵌套，必须在子级的li中嵌套。默认属性；margin、padding-left、list-style-type
+        自定义列表：<span class="tag">&lt;<span class="title">dl</span>&gt;</span> <span class="tag">&lt;<span class="title">dt</span>&gt;</span> <span class="tag">&lt;<span class="title">dd</span>&gt;</span><span class="tag">&lt;/<span class="title">dd</span>&gt;</span> <span class="tag">&lt;<span class="title">dt</span>/&gt;</span><span class="tag">&lt;/<span class="title">dl</span>&gt;</span>
+</code></pre><h3 id="行级标签主要有：">行级标签主要有：</h3><pre><code><span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+双标签；表示没有意义的内容；没有默认属性
+<span class="tag">&lt;<span class="title">q</span>&gt;</span><span class="tag">&lt;/<span class="title">q</span>&gt;</span>:短文本引用 比如在你的网页的文章里想引用某个作家的一句诗，这样会使你的文章更加出彩，那么<span class="tag">&lt;<span class="title">q</span>&gt;</span>标签是你所需要的<span class="tag">&lt;/<span class="title">q</span>&gt;</span>。
+<span class="tag">&lt;<span class="title">blockquote</span>&gt;</span><span class="tag">&lt;/<span class="title">blockquote</span>&gt;</span>长文本引用
+<span class="tag">&lt;<span class="title">br</span>&gt;</span>换行标签
+<span class="tag">&lt;<span class="title">hr</span>&gt;</span>分割线标签
+address 为页面加入地址信息 <span class="tag">&lt;<span class="title">address</span>&gt;</span>上海市松江区丽德创业园<span class="tag">&lt;/<span class="title">address</span>&gt;</span> 样式为斜体
+code 在网页中显示一些计算机专业的编程代码，当代码为一行代码时，你就可以使用code标签了 <span class="tag">&lt;<span class="title">code</span>&gt;</span>var i = 0;<span class="tag">&lt;/<span class="title">code</span>&gt;</span>
+pre 预格式化的文本 要插入多行代码时不能使用code标签，如果是多行代码，可以使用pre标签
+
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.baidu.com"</span> <span class="attribute">target</span>=<span class="value">""</span> <span class="attribute">title</span>=<span class="value">"鼠标放在上面的tips"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+双标签；表示链接;target="blank"表示在新窗口打开链接 target="self"表示在当前窗口打开链接，为默认值。默认值有：text-decoration
+<span class="tag">&lt;<span class="title">a</span>&gt;</span>标签的四种状态：1、a:link 表示未被访问的链接 2、a:visited 表示已被访问的链接 3、a:hover 表示鼠标指针移动到链接上 4、a:active 表示正在被点击的链接
+<span class="tag">&lt;<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+双标签；表示强调；默认属性：font-weight
+<span class="tag">&lt;<span class="title">em</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span>
+双标签；默认属性：font-style：intalic;
+</code></pre><h3 id="表格、表单标签主要有：">表格、表单标签主要有：</h3><pre><code> 表格标签:<span class="tag">table</span> tbody这个标签不怎么使用
+     <span class="tag">tr</span> 表格的行 <span class="tag">th</span> 表格的头部的一个单元格，表格表头
+     <span class="tag">td</span> 表格的一个单元格 <span class="tag">caption</span> 表格标题 <span class="tag">summary</span> 属性 表格的摘要
+     &lt;<span class="tag">img</span> src=<span class="string">"路径"</span>alt=<span class="string">"描述"</span> title=“鼠标滑过时显示的文本”/&gt;
+     单标签；表示图片；
+     &lt;<span class="tag">form</span> action=<span class="string">"url"</span> method=<span class="string">"get"</span> target=<span class="string">"-self"</span>&gt;&lt;/form&gt;
+     action属性 表示输入的数据被传送到的地址，比如一个PhP页面
+     method属性有get/post，数据传送的方式 target属性self/blank,black是在新网页中打开
+     lable标签为input标签定义标注label元素不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。如果您在 <span class="tag">label</span> 元素内点击文本，就会触发此控件。就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上。标签的 <span class="keyword">for</span> 属性应当与相关元素的 id 属性相同
+     &lt;<span class="tag">input</span> type=<span class="string">"text"</span> name=<span class="string">"文本"</span> value=<span class="string">""</span>/&gt;
+     用于账号的输入
+     &lt;<span class="tag">input</span> type=<span class="string">"password"</span> name=<span class="string">"mima"</span> value=<span class="string">""</span>/&gt;
+     用账号的密码输入
+     &lt;<span class="tag">input</span> type=<span class="string">"checkbox"</span> name=<span class="string">""</span> value=<span class="string">""</span> checked=<span class="string">"checked"</span>/&gt;
+   用于复选框 当checked=<span class="string">"checked"</span>时，该选项被默认选中
+   &lt;<span class="tag">input</span> type=<span class="string">"radio"</span> value=<span class="string">"nan"</span> name=<span class="string">""</span>/&gt;
+   用于单选框
+   &lt;<span class="tag">input</span> type=<span class="string">"file"</span>/&gt;
+   用于文件上传
+   &lt;<span class="tag">input</span> type=<span class="string">"button"</span> value=<span class="string">"按钮"</span>/&gt;
+   用于创建按钮
+   &lt;<span class="tag">input</span> type=<span class="string">"reset"</span> value=<span class="string">"重置"</span>/&gt;
+   设置按钮为重置按钮
+   &lt;<span class="tag">input</span> type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>/&gt;
+   设置按钮为提交按钮
+   &lt;<span class="tag">input</span> type=<span class="string">"hidden"</span> value=<span class="string">"存储数据使用"</span>/&gt;
+   &lt;<span class="tag">textarea</span> value=<span class="string">""</span> name=<span class="string">""</span>&gt;我是文本框&lt;/textarae&gt;
+   论坛类的留言框，reset设置为<span class="attribute">none</span>时可以控制扩展。文本域可以控制行和列的数值。
+   cols属性：多行输入域的列数。rows属性多行输入域的行数。
+&lt;select&gt;
+           &lt;option&gt;<span class="number">12</span>&lt;/option&gt;
+           &lt;option&gt;<span class="number">13</span>&lt;/option&gt;
+           &lt;option&gt;<span class="number">14</span>&lt;/option&gt;
+   &lt;/select&gt;
+   列表数据选择。一般用于闹钟。具有multiple属性：可以实现多选功能。option下拉属性。
+   &lt;<span class="tag">iframe</span> src=<span class="string">""</span> <span class="attribute">width</span>=<span class="string">""</span> <span class="attribute">height</span>=<span class="string">""</span>&gt;&lt;/iframe&gt;
+  &lt;dl&gt;
+     &lt;dt&gt;我们是列表标题&lt;/dt&gt;
+     &lt;dd&gt;我们是列表内容&lt;/dd&gt;
+     &lt;dd&gt;我们是列表内容&lt;/dd&gt;        
+  &lt;/dl&gt;
+ 例：
+ &lt;dl&gt;
+     &lt;dt&gt;城市&lt;/dt&gt;
+     &lt;dd&gt;北京&lt;/dd&gt;    
+     &lt;dd&gt;上海&lt;/dd&gt;        
+ &lt;/dl&gt;
+</code></pre><h3 id="标签属性的转换">标签属性的转换</h3><pre><code><span class="attribute">display </span>: block; 显示为块级标签
+<span class="attribute">display </span>: in-line; 显示为行级标签
+<span class="attribute">display </span>: none; 显示为无
+</code></pre><h1 id="二、css的样式">二、css的样式</h1><pre><code>待整理<span class="attribute">...</span><span class="attribute">...</span><span class="attribute">...</span><span class="attribute">...</span><span class="attribute">...</span>
+</code></pre><p><a href="jameblunt1973.github.io">blog</a></p>
+<p><img src="http://img1.3lian.com/2015/w4/73/d/61.jpg" alt="小道士"></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
 
   </section>
 
@@ -368,7 +1153,7 @@ woqu()<span class="comment">//在此处执行函数时，不可以遍历到i的�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

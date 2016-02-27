@@ -1,0 +1,757 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="css盒模型：margin padding border 
+css标签的默认值和属性div:
+a:link hover visit active
+img:background-size,background-position
+浮动和清除浮动的方法float:left,right.
+overflow:hidden
+clear:both
+定位相对定位：position:relative
+绝对定位：po">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css小结">
+<meta property="og:url" content="http://yoursite.com/2016/02/26/css小结/index.html">
+<meta property="og:site_name" content="前端小站">
+<meta property="og:description" content="css盒模型：margin padding border 
+css标签的默认值和属性div:
+a:link hover visit active
+img:background-size,background-position
+浮动和清除浮动的方法float:left,right.
+overflow:hidden
+clear:both
+定位相对定位：position:relative
+绝对定位：po">
+<meta property="og:image" content="http://p1.pstatp.com/large/25a000cd7db6b60cf59">
+<meta property="og:image" content="http://p3.pstatp.com/large/25a000cd7e117b4c2c0">
+<meta property="og:updated_time" content="2016-02-27T01:57:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css小结">
+<meta name="twitter:description" content="css盒模型：margin padding border 
+css标签的默认值和属性div:
+a:link hover visit active
+img:background-size,background-position
+浮动和清除浮动的方法float:left,right.
+overflow:hidden
+clear:both
+定位相对定位：position:relative
+绝对定位：po">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> css小结 | 前端小站 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端小站</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css小结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-26T09:30:36+08:00" content="2016-02-26">
+              2016-02-26
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="css盒模型：">css盒模型：</h1><pre><code><span class="attribute">margin</span> <span class="attribute">padding</span> <span class="attribute">border</span> 
+</code></pre><h1 id="css标签的默认值和属性">css标签的默认值和属性</h1><pre><code><span class="tag">div</span>:
+<span class="tag">a</span><span class="pseudo">:link </span>hover visit active
+<span class="tag">img</span>:<span class="attribute">background-size</span>,<span class="attribute">background-position</span>
+</code></pre><h1 id="浮动和清除浮动的方法">浮动和清除浮动的方法</h1><pre><code><span class="attribute">float</span>:<span class="attribute">left</span>,<span class="attribute">right</span>.
+<span class="attribute">overflow</span>:hidden
+<span class="attribute">clear</span>:both
+</code></pre><h1 id="定位">定位</h1><pre><code>相对定位：<span class="tag">position</span><span class="pseudo">:relative</span>
+绝对定位：<span class="tag">position</span><span class="pseudo">:absolute</span>
+固定定位：<span class="tag">position</span><span class="pseudo">:fixed</span>
+</code></pre><h1 id="引入css的3中方式">引入css的3中方式</h1><pre><code>外部样式、行间样式、内联样式&lt;br&gt;
+优缺点，格式，权重
+内联：优先级高，不会被覆盖，不会产生再次请求。不利于代码维护。没有样式内容分离。
+行间样式：style 位于head 试用于单页面开发，
+外部样式：<span class="keyword">link</span> 内容 样式 行为 分离。代码复用。利于维护。
+会增加请求次数。
+<span class="keyword">reset</span>.css/publice.css
+<span class="variable">@import</span> url 引入方式，不常用
+</code></pre><h1 id="css构成">css构成</h1><pre><code>一般由选择器，属性和属性值构成
+例：<span class="tag">div</span><span class="rules">{
+        <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100px</span></span></span>;
+        <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">100px</span></span></span>;
+    }</span>
+如果值为若干个单词，则要给值加引号;
+例：<span class="tag">p</span><span class="rules">{<span class="rule"><span class="attribute">font-family</span>:<span class="value"><span class="string">"sans serif"</span></span></span>;}</span>
+</code></pre><h1 id="css选择器">css选择器</h1><p>1、统配选择器：</p>
+<pre><code><span class="keyword">*</span>
+</code></pre><p>2、元素选择器：</p>
+<pre><code><span class="keyword">div</span><span class="regexp">/a/</span>h1<span class="regexp">/p/</span>span{color:red}
+</code></pre><p>3、id选择器：</p>
+<pre><code><span class="id">#id</span>名<span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span>;}</span>
+</code></pre><p>4、类选择器：</p>
+<pre><code>.类名<span class="rules">{<span class="rule"><span class="attribute">fot-size</span>:<span class="value"><span class="number">12px</span></span></span>;}</span>
+</code></pre><p>5、属性选择器：</p>
+<pre><code><span class="tag">a</span><span class="attr_selector">[属性值：href/title/src/url]</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span>;}</span>一般用于<span class="tag">input</span>标签
+</code></pre><p>6、后代选择器:</p>
+<pre><code><span class="tag">div</span> <span class="tag">a</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span>;}</span>
+</code></pre><p>7、子元素选择器：</p>
+<pre><code><span class="tag">h1</span> &gt; <span class="tag">em</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">green</span></span>;}</span>.只作用于某个元素的子元素。
+</code></pre><p>8、兄弟选择器:</p>
+<pre><code><span class="tag">h1</span> + <span class="tag">p</span> <span class="rules">{<span class="rule"><span class="attribute">margin-top</span>:<span class="value"><span class="number">50px</span></span></span>;}</span>.同一个父级，<span class="tag">h1</span>和<span class="tag">p</span>是相邻的元素。
+</code></pre><p>9、nth选择器：</p>
+<pre><code><span class="function"><span class="title">nth-child</span><span class="params">()</span></span>,<span class="function"><span class="title">nth-first-child</span><span class="params">()</span></span>,<span class="function"><span class="title">nth-last-child</span><span class="params">()</span></span>
+</code></pre><p>10、状态选择器：</p>
+<pre><code><span class="tag">focus</span>,<span class="tag">checked</span>,<span class="tag">enabled</span>,<span class="tag">disabled</span> 例：<span class="tag">input</span><span class="attr_selector">[type="text"]</span><span class="pseudo">:disabled</span> <span class="rules">{ <span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#ddd</span></span></span>;}</span>
+</code></pre><p>11、伪元素选择器：</p>
+<pre><code><span class="keyword">E</span>::first-<span class="keyword">line</span> 匹配<span class="keyword">E</span>元素的第一行
+<span class="keyword">E</span>::first-letter 匹配<span class="keyword">E</span>元素的第一个字母
+<span class="keyword">E</span>::before 在<span class="keyword">E</span>元素之前插入生成的内容
+<span class="keyword">E</span>::after 在<span class="keyword">E</span>元素之后插入生成的内容
+</code></pre><p>12、伪类选择器：</p>
+<pre><code><span class="tag">a</span><span class="pseudo">:link</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">red</span></span></span>} 未被访问的链接
+<span class="tag">a</span><span class="pseudo">:visited</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">green</span></span></span>} 已被访问的链接
+<span class="tag">a</span><span class="pseudo">:hover</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">black</span></span></span>} 鼠标移动到链接上
+<span class="tag">a</span><span class="pseudo">:active</span><span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">glod</span></span></span>} 选的的链接
+</code></pre><p>13、分组选择器：</p>
+<pre><code>偏重代码优化，对于重复的代码合并到一块。
+</code></pre><p>选择器的优先级：id &gt;class&gt;标签</p>
+<pre><code><span class="change">!important</span>
+</code></pre><p>属性的继承</p>
+<pre><code>可继承属性：<span class="attribute">line-height</span> <span class="attribute">color</span> <span class="attribute">font</span> <span class="attribute">font-family</span> <span class="attribute">font-size</span> <span class="attribute">font-style</span> <span class="attribute">font-variant</span>
+不可继承属性：<span class="attribute">display</span> <span class="attribute">margin</span> <span class="attribute">border</span> <span class="attribute">padding</span> <span class="attribute">background</span> <span class="attribute">width</span> <span class="attribute">height</span> <span class="attribute">overflow</span> <span class="attribute">position</span> <span class="attribute">left</span> <span class="attribute">right</span> <span class="attribute">top</span> <span class="attribute">right</span> <span class="attribute">top</span> <span class="attribute">bottom</span> <span class="attribute">z-index</span> <span class="attribute">float</span> 
+</code></pre><p>颜色值</p>
+<pre><code>red green 等英文单词
+<span class="preprocessor">#<span class="number">0000</span> #号加<span class="number">16</span>进制的数字</span>
+rgb：red green blue
+&lt;img src=<span class="string">"http://p3.pstatp.com/large/23b00095416e3d2f534"</span>/&gt;
+rgba: red green blue a代表透明度，取值<span class="number">0</span>~<span class="number">1</span>之间
+hsl (IE8-浏览器不支持) HSL模式是通过对色调(H)、饱和度(S)、亮度(L)三个颜色通道的变化以及它们相互的叠加得到各式各样的颜色。HSL标准几乎可以包括人类视力所能感知的所有颜色.h:色调(hue)可以为任意整数。<span class="number">0</span>(或<span class="number">360</span>或-<span class="number">360</span>)表示红色，<span class="number">60</span>表示黄色，<span class="number">120</span>表示绿色，<span class="number">180</span>表示青色，<span class="number">240</span>表示蓝色，<span class="number">300</span>表示洋红(当h值大于<span class="number">360</span>时，实际的值等于该值模<span class="number">360</span>后的值).s:饱和度(saturation)，就是指颜色的深浅度和鲜艳程度。取<span class="number">0</span>-<span class="number">100</span>%范围的值，其中<span class="number">0</span>表示灰度(没有该颜色)，<span class="number">100</span>%表示饱和度最高(颜色最鲜艳).l:亮度(lightness)，取<span class="number">0</span>-<span class="number">100</span>%范围的值，其中<span class="number">0</span>表示最暗(黑色)，<span class="number">100</span>%表示最亮(白色)
+</code></pre><p><img src="http://p1.pstatp.com/large/25a000cd7db6b60cf59"><br><img src="http://p3.pstatp.com/large/25a000cd7e117b4c2c0"></p>
+<pre><code><span class="function"><span class="title">hsla</span> <span class="params">(<span class="variable">IE8</span>-浏览器不支持)</span>HSLA模式是HSL的扩展模式，在HSL的基础上增加一个透明通道<span class="title">alpha</span>来设置透明度</span>
+</code></pre><p>单位：</p>
+<pre><code>px 具体单位 像素
+百分比 单位根据父级
+em 单位被定义为当前字体大小 根据body 例如：bidy{font-size:<span class="number">14</span>px} 单位变化根据父级来改变
+ <span class="comment">rem root em 基于根元素html进行设置 </span>
+ vh/vm 视窗单位 h等于viewport高度的<span class="number">1</span>/<span class="number">100</span>.例如，如果浏览器的高是<span class="number">900</span>px,<span class="number">1</span>vh求得的值为<span class="number">9</span>px。同理，如果显示窗口宽度为<span class="number">750</span>px,<span class="number">1</span>vw求得的值为<span class="number">7</span>.<span class="number">5</span>px
+</code></pre><p>line-height</p>
+<pre><code>可以用来居中
+</code></pre><p>font</p>
+<pre><code>设置字体样式
+</code></pre><p>BFC</p>
+<pre><code>BFC全称”<span class="keyword">Block</span> Formatting <span class="keyword">Context</span>”, 中文为“块级格式化上下文”
+</code></pre><p>BFC的生成</p>
+<pre><code>满足下列css声明之一的元素便会生成BFC。
+根元素：<span class="tag">html</span> 就是一个大的bfc
+<span class="attribute">float</span>的值不为<span class="attribute">none</span>
+<span class="attribute">overflow</span>的值不为<span class="value">visible</span>
+<span class="attribute">display</span>的值为<span class="value">inline</span>-<span class="value">block</span>、<span class="tag">table</span>-cell、<span class="tag">table</span>-<span class="tag">caption</span>
+<span class="attribute">position</span>的值为<span class="value">absolute</span>或<span class="value">fixed</span>
+</code></pre><p>BFC的约束规则</p>
+<pre><code>生成<span class="keyword">BFC元素的子元素会一个接一个的放置。垂直方向上他们的起点是一个包含块的顶部，两个相邻子元素之间的垂直距离取决于元素的margin特性。在BFC中相邻的块级元素外边距会折叠。
+</span>生成<span class="keyword">BFC元素的子元素中，每一个子元素做外边距与包含块的左边界相接触，（对于从右到左的格式化，右外边距接触右边界），即使浮动元素也是如此（尽管子元素的内容区域会由于浮动而压缩），除非这个子元素也创建了一个新的BFC（如它自身也是一个浮动元素）。
+</span>内部的<span class="keyword">Box会在垂直方向上一个接一个的放置
+</span>垂直方向上的距离由<span class="keyword">margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠，与方向无关。）
+</span>每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明<span class="keyword">BFC中子元素不会超出他的包含块，而 </span>   position为absolute的元素可以超出他的包含块边界）
+<span class="keyword">BFC的区域不会与float的元素区域重叠
+</span>计算<span class="keyword">BFC的高度时，浮动子元素也参与计算
+</span><span class="keyword">BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然</span>
+</code></pre>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/25/闭包/" rel="next" title="闭包">
+                <i class="fa fa-chevron-left"></i> 闭包
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="URL:/images/avatar.jpg"
+               alt="我就是我，不一样的水果。" />
+          <p class="site-author-name" itemprop="name">我就是我，不一样的水果。</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#css盒模型："><span class="nav-number">1.</span> <span class="nav-text">css盒模型：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css标签的默认值和属性"><span class="nav-number">2.</span> <span class="nav-text">css标签的默认值和属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浮动和清除浮动的方法"><span class="nav-number">3.</span> <span class="nav-text">浮动和清除浮动的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定位"><span class="nav-number">4.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引入css的3中方式"><span class="nav-number">5.</span> <span class="nav-text">引入css的3中方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css构成"><span class="nav-number">6.</span> <span class="nav-text">css构成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css选择器"><span class="nav-number">7.</span> <span class="nav-text">css选择器</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">我就是我，不一样的水果。</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
