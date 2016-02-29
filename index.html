@@ -212,6 +212,207 @@
             
               
                 
+                <a class="post-title-link" href="/2016/02/29/css小结2/" itemprop="url">
+                  css小结2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-29T14:57:09+08:00" content="2016-02-29">
+              2016-02-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>再次认识font</li>
+</ul>
+<p><a href="http://www.cnblogs.com/fsjohnhuang/p/4310533.html#a32" target="_blank" rel="external">http://www.cnblogs.com/fsjohnhuang/p/4310533.html#a32</a></p>
+<ul>
+<li><p>盒模型</p>
+</li>
+<li><p>标准盒模型</p>
+</li>
+</ul>
+<p><img src="http://images.cnitblog.com/blog/347002/201409/121710262933336.jpg"></p>
+<p>外盒模型</p>
+<pre><code>元素空间宽度 = <span class="attribute">content</span> <span class="attribute">width</span> + <span class="attribute">padding</span> + <span class="attribute">border</span> + <span class="attribute">margin</span>的宽度
+
+元素空间高度 = <span class="attribute">content</span> <span class="attribute">height</span> + <span class="attribute">padding</span> + <span class="attribute">border</span> + <span class="attribute">margin</span>的高度
+</code></pre><p>  内盒模型</p>
+<pre><code>元素宽度 = <span class="attribute">content</span> <span class="attribute">width</span> + <span class="attribute">padding</span> + <span class="attribute">border</span>的宽度
+
+元素高度 = <span class="attribute">content</span> <span class="attribute">height</span> + <span class="attribute">padding</span> + <span class="attribute">border</span>的高度
+</code></pre><p>－ IE盒模型 当IE6~8处于怪异模式下就会使用IE盒子模型，否则将使用W3C标准盒子模型。</p>
+<p><img src="http://images.cnitblog.com/blog/347002/201409/121710451993093.jpg"></p>
+<p>外盒模型</p>
+<pre><code>元素空间宽度 = <span class="attribute">content</span> <span class="attribute">width</span> + <span class="attribute">margin</span>的宽度
+
+元素空间高度 = <span class="attribute">content</span> <span class="attribute">height</span> + <span class="attribute">margin</span>的高度
+</code></pre><p>内盒模型</p>
+<pre><code>元素宽度 = <span class="attribute">content</span> <span class="attribute">width</span>
+
+元素高度 = <span class="attribute">content</span> <span class="attribute">height</span>
+</code></pre><p>－box-sizing IE8+</p>
+<p>box-sizing有三个值，默认是content-box（表示元素使用W3C盒子模型），而border-box（表示元素使用IE盒子模型），inherit（从父元素上继承）</p>
+<p>－float 浮动 </p>
+<p>具有包裹性 本意作用是做文字环绕 float布局只是歪打正着的产物</p>
+<ul>
+<li>清除浮动</li>
+</ul>
+<p>－使用带clear属性的空元素</p>
+<p>－使用CSS的overflow属性 给浮动元素的容器添加overflow:hidden;或overflow:auto;可以清除浮动，另外在 IE6 中还需要触发 hasLayout ，例如为父元素设置容器宽高或设置 zoom:1。</p>
+<p>在添加overflow属性后，浮动元素又回到了容器层，把容器高度撑起，达到了清理浮动的效果。</p>
+<p>－给浮动的元素的容器添加浮动</p>
+<p>给浮动元素的容器也添加上浮动属性即可清除内部浮动，但是这样会使其整体浮动，影响布局，不推荐使用。</p>
+<p>-使用邻接元素处理 给浮动元素后面的元素添加clear属性。</p>
+<p>－使用CSS的:after伪元素 结合 zoom</p>
+<p>结合 :after 伪元素（注意这不是伪类，而是伪元素，代表一个元素之后最近的元素）和 IEhack ，可以完美兼容当前主流的各大浏览器，这里的 IEhack 指的是触发 hasLayout。</p>
+<p>给浮动元素的容器添加一个clearfix的class，然后给这个class添加一个:after伪元素实现元素末尾添加一个看不见的块元素（Block element）清理浮动。</p>
+<p>.clearfix:after{<br>  content: “.”;<br>  display: block;<br>  height: 0; <!--line-height:0--><br>  clear: both;<br>  visibility: hidden;<br>  }</p>
+<p>.clearfix {<br>  /<em> 触发 hasLayout </em>/<br>  zoom: 1;<br>}<br>添加到父级，清除浮动</p>
+<ul>
+<li>IE hack  有IE就有hack  hack主要是针对IE浏览器</li>
+</ul>
+<p>所有 IE{property:value\9;}<br>大于或等于 IE 8{property:value\0;}<br>小于或等于 IE 7{*property:value;}<br>.IE 8/9{property:value\0;}<br>.IE 9{property:value\9\0;}<br>.IE 7{+property:value;}<br>.IE 6{_property:value;}<br>非 IE{property//:value;}</p>
+<p>－ zoom 定义缩放比例。不允许负值 有兼容问题 主要用于IE67浏览器 触发haslayout 达到清除浮动等功能</p>
+<p>zoom:1</p>
+<p>－ 垂直居中</p>
+<p>－ 使用绝对定位垂直居中</p>
+<p>flex居中：</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+        <span class="tag">html</span>,<span class="tag">body</span><span class="rules">{<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;}</span>
+        <span class="tag">div</span><span class="rules">{
+            <span class="rule"><span class="attribute">display</span>:<span class="value"> flex</span></span>;
+            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;
+            <span class="rule"><span class="attribute">justify-content</span>:<span class="value">center</span></span>;
+            <span class="rule"><span class="attribute">align-items</span>:<span class="value">center</span></span>;
+            <span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>;
+        }</span>
+        <span class="tag">h2</span><span class="rules">{
+            <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
+            <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">100px</span></span></span>;
+            <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;
+            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;
+            <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">2px</span> red solid</span></span>;
+        }</span>
+
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">h2</span>&gt;</span>默认值<span class="tag">&lt;/<span class="title">h2</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span> 
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>兼容性最好 absolute结合margin 需要知道尺寸</p>
+<p><a href="http://www.cnblogs.com/dojo-lzz/p/4419596.html" target="_blank" rel="external">http://www.cnblogs.com/dojo-lzz/p/4419596.html</a></p>
+<p>-自动换行 </p>
+<p>word-wrap 是控制换行的</p>
+<p>break-word 是将强制换行 </p>
+<p>word-break 表明是否断开单词换行 面对长度较长单词</p>
+<p>break-all 允许断开单词换行</p>
+<p>white-space</p>
+<p>pre :空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签</pre></p>
+<p>nowrap: 文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止</p>
+<p>pre-wrap: 保留空白符序列，但是正常地进行换行</p>
+<p>当文本溢出包含元素时发生的事情</p>
+<ul>
+<li>text-overflow: clip|ellipsis|string; </li>
+</ul>
+<p>clip默认值 超出裁剪<br>ellipsis 超出显示…</p>
+<p>－单行文本溢出显示省略号(…)</p>
+<p>overflow: hidden;<br>text-overflow:ellipsis;<br>white-space: nowrap; 不换行</p>
+<p>部分浏览器 需要带上width</p>
+<p>－多行文本溢出显示省略号(…) 仅支持webkit内核浏览器 移动端</p>
+<p>display: -webkit-box; 将对象作为弹性伸缩盒子模型显示<br>-webkit-box-orient: vertical; 伸缩盒对象的子元素的排列方式<br>-webkit-line-clamp: 3; 用来限制在一个块元素显示的文本的行数<br>overflow: hidden;</p>
+<p>利用 after</p>
+<p>p{position: relative; line-height: 20px; max-height: 40px;overflow: hidden;}<br>p::after{content: “…”; position: absolute; bottom: 0; right: 0; padding-left: 40px;</p>
+<p>-Opacity属性用来设置一个元素的透明度，取值范围是0~1之间，不可为负值。opacity取值为1是完全不透明，取值为0是完全透明</p>
+<p>opacity:0.5;<br>filter:alpha(opacity=50);/<em> IE 4+ </em>/  ||</p>
+<p>filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);  </p>
+<p>-ms-filter:”progid:DXImageTransform.Microsoft.Alpha(Opacity=50)”;  /<em>i e 8+</em>/ </p>
+<p>－Overflow </p>
+<p>overflow属性有四个值：visible (默认), </p>
+<p>hidden 将所有超出盒子的所有内容都给隐藏掉。</p>
+<p>scroll 始终出现滚动条</p>
+<p>auto 现代浏览器的默认属性 有超出内容 才有滚动条</p>
+<p>overflow-x</p>
+<p>overflow-y </p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/26/css小结/" itemprop="url">
                   css小结
                 </a>
@@ -1153,7 +1354,7 @@ pre 预格式化的文本 要插入多行代码时不能使用code标签，如�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
