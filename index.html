@@ -212,6 +212,154 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/01/清除浮动的方法/" itemprop="url">
+                  清除浮动的方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-01T19:19:25+08:00" content="2016-03-01">
+              2016-03-01
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##<br> 清除浮动的常见方法</p>
+<p>  在我们布局样式的时候，经常会用到float来达到我们的目的。为了使浮动后不影响其他布局，就常常需要把浮动的效果给清除。混迹前端，岂能没有一技之长。下面就传授给你清除浮动的几种方法。</p>
+<p>  1、结尾处加上空div标签：clear:both</p>
+<pre><code>  <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+    <span class="class">.div1</span><span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#000080</span></span></span>;<span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid red</span></span></span>}
+    <span class="class">.div2</span><span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#800080</span></span></span>;<span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid red</span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">100px</span></span></span>;<span class="rule"><span class="attribute">margin-top</span>:<span class="value"><span class="number">10px</span></span></span></span>}
+    <span class="class">.left</span><span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">20%</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#DDD</span></span></span></span>}
+    <span class="class">.right</span><span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">right</span></span>;<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">30%</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">80px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#DDD</span></span></span></span>}
+    <span class="comment">/*清除浮动代码*/</span>
+    <span class="class">.clearfloat</span><span class="rules">{<span class="rule"><span class="attribute">clear</span>:<span class="value">both</span></span></span>}
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"div1"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>Left<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span>Right<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"clearfloat"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"div2"</span>&gt;</span>
+    div2
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度</p>
+<p>优点：简单、代码少、浏览器支持好、不容易出现怪问题</p>
+<p>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div，让人感觉很不好</p>
+<p>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法<br>  2、父级div定义 伪类：after 和zoom</p>
+<pre><code><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+    <span class="class">.left</span><span class="rules">{
+        <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;
+        <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">200px</span></span></span>;
+        <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">200px</span></span></span>;
+    }</span>
+    <span class="class">.right</span><span class="rules">{
+        <span class="rule"><span class="attribute">float</span>:<span class="value">right</span></span>;
+        <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">200px</span></span></span>;
+        <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">200px</span></span></span>;
+    }</span>
+    <span class="class">.clearfloat</span><span class="pseudo">:after</span><span class="rules">{
+        <span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>;
+        <span class="rule"><span class="attribute">clear</span>:<span class="value">both</span></span>;
+        <span class="rule"><span class="attribute">content</span>:<span class="value"><span class="string">""</span></span></span>;
+        <span class="rule"><span class="attribute">visibility</span>:<span class="value">hidden</span></span>;
+        <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">0</span>
+    </span></span></span>}
+    <span class="class">.clearfloat</span><span class="rules">{
+        <span class="rule"><span class="attribute">zoom</span>:<span class="value"><span class="number">1</span></span></span>;//兼容ie6、7
+    }</span>
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>      
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">'div1 clearfloat'</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="title">div</span>&gt;</span>  
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>  推荐使用这种方法，可以封装到公共css或res css文件中</p>
+<p>  3、父级div定义 overflow：hihhden</p>
+<pre><code>  <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+    <span class="class">.div1</span><span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#000080</span></span></span>;<span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid red</span></span>;<span class="comment">/*解决代码*/</span><span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">98%</span></span></span>;<span class="rule"><span class="attribute">overflow</span>:<span class="value">hidden</span></span></span>}
+    <span class="class">.div2</span><span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#800080</span></span></span>;<span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid red</span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">100px</span></span></span>;<span class="rule"><span class="attribute">margin-top</span>:<span class="value"><span class="number">10px</span></span></span>;<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">98%</span></span></span></span>}
+    <span class="class">.left</span><span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">20%</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#DDD</span></span></span></span>}
+    <span class="class">.right</span><span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">right</span></span>;<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">30%</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">80px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#DDD</span></span></span></span>}
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"div1"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>Left<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span>Right<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"div2"</span>&gt;</span>
+    div2
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span> 
+</code></pre><p>  该方法不能和position配合使用，因为超出的尺寸的会被隐藏。</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/01/js小结/" itemprop="url">
                   js小结
                 </a>
@@ -269,7 +417,7 @@
 <p>－ 内部 script标签区域 </p>
 <p>－ 注释方式 单行注释  多行 注释</p>
 <p>－ 数据类型 </p>
-<pre><code>基本类型（primitive）
+<pre><code>基本类型（primitive） 
 
 <span class="number">1.</span>Undefined
 
@@ -1643,7 +1791,7 @@ pre 预格式化的文本 要插入多行代码时不能使用code标签，如�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
