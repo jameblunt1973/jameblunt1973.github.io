@@ -212,6 +212,208 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/05/js对dom的操作/" itemprop="url">
+                  js对dom的操作
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-05T16:09:02+08:00" content="2016-03-05">
+              2016-03-05
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="js中的dom对象，也就是对html的操作">js中的dom对象，也就是对html的操作</h2><p> 一.获取到html中元素</p>
+<pre><code>通过id获取：<span class="tag">var</span> document.<span class="function"><span class="title">getElementById</span><span class="params">(<span class="string">"id名"</span>)</span></span>/document.<span class="function"><span class="title">querySelector</span><span class="params">(<span class="string">"#id名"</span>)</span></span>
+通过class名获取：<span class="tag">var</span> document.<span class="function"><span class="title">getElementsByClassName</span><span class="params">(<span class="string">"class名"</span>)</span></span>/document.<span class="function"><span class="title">querySelector</span><span class="params">(<span class="string">".class名"</span>)</span></span>
+通过标签获取：<span class="tag">var</span> documnet.<span class="function"><span class="title">getElementsByTagName</span><span class="params">(<span class="string">"标签名"</span>)</span></span>/document.<span class="function"><span class="title">querySelector</span><span class="params">(<span class="string">"标签名"</span>)</span></span>
+</code></pre><p>二、改变html</p>
+<pre><code>改变输出流：<span class="built_in">document</span>.write(Date());向网页中添加今天的日期。
+改变html元素的内容：<span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">'p'</span>).innerHTML=<span class="string">"内容"</span>。
+改变html元素的属性：<span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">"img"</span>).src=<span class="string">"新的路径"</span>
+</code></pre><p>三、改变css</p>
+<pre><code><span class="built_in">document</span>.getElementById(id).style.property=<span class="keyword">new</span> style
+例：<span class="built_in">document</span>.getElementById(<span class="string">"p2"</span>).style.color=<span class="string">"blue"</span>;
+</code></pre><p>四、dom事件</p>
+<pre><code>点击事件：onclick
+onmousedown/onmouseup:首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件。
+onload 和 onunload 事件会在用户进入或离开页面时被触发。
+onload 和 onunload 事件可用于处理 cookie
+onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。
+onchange:常结合对输入字段的验证来使用。适用于<span class="tag">&lt;<span class="title">input</span>&gt;</span> <span class="tag">&lt;<span class="title">textarea</span>&gt;</span> <span class="tag">&lt;<span class="title">select</span>&gt;</span>。
+onmouseover和onmouseout:用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数
+onfocus：在对象获得焦点时发生。
+</code></pre><p>五、对dom节点的操作（添加、删除html元素）</p>
+<pre><code>创建新的HTML节点:必须先创建该元素，在向一个已存在的元素添加该元素
+    var para = document.createElement('p')
+    var div1=document.createElement('div')
+    div1.appendChild(para)
+删除已有的HTML元素:你必须首先获取该元素
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"div1"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p1"</span>&gt;</span>这是一个段落。<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p2"</span>&gt;</span>这是另一个段落。<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+        <span class="keyword">var</span> parent=<span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);
+        <span class="keyword">var</span> child=<span class="built_in">document</span>.getElementById(<span class="string">"p1"</span>);
+        parent.removeChild(child);
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>                    
+</code></pre>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/01/apply和call方法/" itemprop="url">
+                  apply和call方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-01T20:05:28+08:00" content="2016-03-01">
+              2016-03-01
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>## </p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/01/清除浮动的方法/" itemprop="url">
                   清除浮动的方法
                 </a>
@@ -1566,193 +1768,14 @@ console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/11/25/html小结/" itemprop="url">
-                  html和css知识总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-11-25T16:08:29+08:00" content="2015-11-25">
-              2015-11-25
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="一、html">一、html</h1><h2 id="1、元素：">1、元素：</h2><pre><code>html就是由各种各样的html元素构成的文本文件。
-元素与标签的区别例：
-<span class="tag">&lt;<span class="title">p</span>&gt;</span>这是一个p标签
-<span class="tag">&lt;<span class="title">p</span>&gt;</span>这是内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>，这就是一个元素，元素是由一个开始和结束的标签组成的，用来包含某些内容。
-</code></pre><h2 id="2、标签：">2、标签：</h2><pre><code>标签可以分为块级、行级标签和内联标签
-</code></pre><h3 id="块级标签的特征：">块级标签的特征：</h3><pre><code><span class="number">1</span>、默认独占一行
-<span class="number">2</span>、支持定义宽高。没有宽高时，默认撑满一排
-<span class="number">3</span>、支持所有css命令
-</code></pre><h3 id="行级标签的特征">行级标签的特征</h3><pre><code><span class="number">1</span>、同排可以继续跟同类的标签
-<span class="number">2</span>、内容撑开高度
-<span class="number">3</span>、不支持宽高
-<span class="number">4</span>、不支持上下的margin和padding
-<span class="number">5</span>、代码换行被解析
-</code></pre><h3 id="内联块标签的特征：">内联块标签的特征：</h3><pre><code><span class="number">1</span>、具有行级标签的属性
-<span class="number">2</span>、可以设置宽高
-</code></pre><h3 id="块级标签主要有：">块级标签主要有：</h3><pre><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span> 
-       双标签；可以把内容分割为独立的、不同的部分。
-       <span class="tag">&lt;<span class="title">h1</span>&gt;</span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span> <span class="tag">&lt;<span class="title">h2</span>&gt;</span><span class="tag">&lt;/<span class="title">h2</span>&gt;</span> <span class="tag">&lt;<span class="title">h3</span>&gt;</span><span class="tag">&lt;/<span class="title">h3</span>&gt;</span> <span class="tag">&lt;<span class="title">h4</span>&gt;</span><span class="tag">&lt;/<span class="title">h4</span>&gt;</span> <span class="tag">&lt;<span class="title">h5</span>&gt;</span><span class="tag">&lt;/<span class="title">h5</span>&gt;</span> <span class="tag">&lt;<span class="title">h6</span>&gt;</span><span class="tag">&lt;/<span class="title">h6</span>&gt;</span> 
-       双标签；这用来定义标题的标签。<span class="tag">&lt;<span class="title">h1</span>&gt;</span>用来定义最大的标题。<span class="tag">&lt;<span class="title">h6</span>&gt;</span>用来定义最小的标题。默认属性；margin、font-wight、font-size
-<span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>  
-       双标签；用来定义文章段落、内容。默认属性；margin
-       <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
-           <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-       <span class="tag">&lt;/<span class="title">ul</span>&gt;</span> 
-       双标签；<span class="tag">&lt;<span class="title">ul</span>&gt;</span>、<span class="tag">&lt;<span class="title">li</span>&gt;</span>标签定义无序列表，必须组合使用。不可嵌套其他标签，如果要嵌套，必须在子级的li中嵌套。默认属性；margin、padding-left、list-style-type
-       <span class="tag">&lt;<span class="title">ol</span>&gt;</span>
-           <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-       <span class="tag">&lt;/<span class="title">ol</span>&gt;</span>
-        双标签；<span class="tag">&lt;<span class="title">ol</span>&gt;</span>、<span class="tag">&lt;<span class="title">li</span>&gt;</span>标签定义有序列表，必须组合使用。不可嵌套其他标签，如果嵌套，必须在子级的li中嵌套。默认属性；margin、padding-left、list-style-type
-        自定义列表：<span class="tag">&lt;<span class="title">dl</span>&gt;</span> <span class="tag">&lt;<span class="title">dt</span>&gt;</span> <span class="tag">&lt;<span class="title">dd</span>&gt;</span><span class="tag">&lt;/<span class="title">dd</span>&gt;</span> <span class="tag">&lt;<span class="title">dt</span>/&gt;</span><span class="tag">&lt;/<span class="title">dl</span>&gt;</span>
-</code></pre><h3 id="行级标签主要有：">行级标签主要有：</h3><pre><code><span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-双标签；表示没有意义的内容；没有默认属性
-<span class="tag">&lt;<span class="title">q</span>&gt;</span><span class="tag">&lt;/<span class="title">q</span>&gt;</span>:短文本引用 比如在你的网页的文章里想引用某个作家的一句诗，这样会使你的文章更加出彩，那么<span class="tag">&lt;<span class="title">q</span>&gt;</span>标签是你所需要的<span class="tag">&lt;/<span class="title">q</span>&gt;</span>。
-<span class="tag">&lt;<span class="title">blockquote</span>&gt;</span><span class="tag">&lt;/<span class="title">blockquote</span>&gt;</span>长文本引用
-<span class="tag">&lt;<span class="title">br</span>&gt;</span>换行标签
-<span class="tag">&lt;<span class="title">hr</span>&gt;</span>分割线标签
-address 为页面加入地址信息 <span class="tag">&lt;<span class="title">address</span>&gt;</span>上海市松江区丽德创业园<span class="tag">&lt;/<span class="title">address</span>&gt;</span> 样式为斜体
-code 在网页中显示一些计算机专业的编程代码，当代码为一行代码时，你就可以使用code标签了 <span class="tag">&lt;<span class="title">code</span>&gt;</span>var i = 0;<span class="tag">&lt;/<span class="title">code</span>&gt;</span>
-pre 预格式化的文本 要插入多行代码时不能使用code标签，如果是多行代码，可以使用pre标签
-
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.baidu.com"</span> <span class="attribute">target</span>=<span class="value">""</span> <span class="attribute">title</span>=<span class="value">"鼠标放在上面的tips"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-双标签；表示链接;target="blank"表示在新窗口打开链接 target="self"表示在当前窗口打开链接，为默认值。默认值有：text-decoration
-<span class="tag">&lt;<span class="title">a</span>&gt;</span>标签的四种状态：1、a:link 表示未被访问的链接 2、a:visited 表示已被访问的链接 3、a:hover 表示鼠标指针移动到链接上 4、a:active 表示正在被点击的链接
-<span class="tag">&lt;<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-双标签；表示强调；默认属性：font-weight
-<span class="tag">&lt;<span class="title">em</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span>
-双标签；默认属性：font-style：intalic;
-</code></pre><h3 id="表格、表单标签主要有：">表格、表单标签主要有：</h3><pre><code> 表格标签:<span class="tag">table</span> tbody这个标签不怎么使用
-     <span class="tag">tr</span> 表格的行 <span class="tag">th</span> 表格的头部的一个单元格，表格表头
-     <span class="tag">td</span> 表格的一个单元格 <span class="tag">caption</span> 表格标题 <span class="tag">summary</span> 属性 表格的摘要
-     &lt;<span class="tag">img</span> src=<span class="string">"路径"</span>alt=<span class="string">"描述"</span> title=“鼠标滑过时显示的文本”/&gt;
-     单标签；表示图片；
-     &lt;<span class="tag">form</span> action=<span class="string">"url"</span> method=<span class="string">"get"</span> target=<span class="string">"-self"</span>&gt;&lt;/form&gt;
-     action属性 表示输入的数据被传送到的地址，比如一个PhP页面
-     method属性有get/post，数据传送的方式 target属性self/blank,black是在新网页中打开
-     lable标签为input标签定义标注label元素不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。如果您在 <span class="tag">label</span> 元素内点击文本，就会触发此控件。就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上。标签的 <span class="keyword">for</span> 属性应当与相关元素的 id 属性相同
-     &lt;<span class="tag">input</span> type=<span class="string">"text"</span> name=<span class="string">"文本"</span> value=<span class="string">""</span>/&gt;
-     用于账号的输入
-     &lt;<span class="tag">input</span> type=<span class="string">"password"</span> name=<span class="string">"mima"</span> value=<span class="string">""</span>/&gt;
-     用账号的密码输入
-     &lt;<span class="tag">input</span> type=<span class="string">"checkbox"</span> name=<span class="string">""</span> value=<span class="string">""</span> checked=<span class="string">"checked"</span>/&gt;
-   用于复选框 当checked=<span class="string">"checked"</span>时，该选项被默认选中
-   &lt;<span class="tag">input</span> type=<span class="string">"radio"</span> value=<span class="string">"nan"</span> name=<span class="string">""</span>/&gt;
-   用于单选框
-   &lt;<span class="tag">input</span> type=<span class="string">"file"</span>/&gt;
-   用于文件上传
-   &lt;<span class="tag">input</span> type=<span class="string">"button"</span> value=<span class="string">"按钮"</span>/&gt;
-   用于创建按钮
-   &lt;<span class="tag">input</span> type=<span class="string">"reset"</span> value=<span class="string">"重置"</span>/&gt;
-   设置按钮为重置按钮
-   &lt;<span class="tag">input</span> type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>/&gt;
-   设置按钮为提交按钮
-   &lt;<span class="tag">input</span> type=<span class="string">"hidden"</span> value=<span class="string">"存储数据使用"</span>/&gt;
-   &lt;<span class="tag">textarea</span> value=<span class="string">""</span> name=<span class="string">""</span>&gt;我是文本框&lt;/textarae&gt;
-   论坛类的留言框，reset设置为<span class="attribute">none</span>时可以控制扩展。文本域可以控制行和列的数值。
-   cols属性：多行输入域的列数。rows属性多行输入域的行数。
-&lt;select&gt;
-           &lt;option&gt;<span class="number">12</span>&lt;/option&gt;
-           &lt;option&gt;<span class="number">13</span>&lt;/option&gt;
-           &lt;option&gt;<span class="number">14</span>&lt;/option&gt;
-   &lt;/select&gt;
-   列表数据选择。一般用于闹钟。具有multiple属性：可以实现多选功能。option下拉属性。
-   &lt;<span class="tag">iframe</span> src=<span class="string">""</span> <span class="attribute">width</span>=<span class="string">""</span> <span class="attribute">height</span>=<span class="string">""</span>&gt;&lt;/iframe&gt;
-  &lt;dl&gt;
-     &lt;dt&gt;我们是列表标题&lt;/dt&gt;
-     &lt;dd&gt;我们是列表内容&lt;/dd&gt;
-     &lt;dd&gt;我们是列表内容&lt;/dd&gt;        
-  &lt;/dl&gt;
- 例：
- &lt;dl&gt;
-     &lt;dt&gt;城市&lt;/dt&gt;
-     &lt;dd&gt;北京&lt;/dd&gt;    
-     &lt;dd&gt;上海&lt;/dd&gt;        
- &lt;/dl&gt;
-</code></pre><h3 id="标签属性的转换">标签属性的转换</h3><pre><code><span class="attribute">display </span>: block; 显示为块级标签
-<span class="attribute">display </span>: in-line; 显示为行级标签
-<span class="attribute">display </span>: none; 显示为无
-</code></pre><h1 id="二、css的样式">二、css的样式</h1><pre><code>待整理<span class="attribute">...</span><span class="attribute">...</span><span class="attribute">...</span><span class="attribute">...</span><span class="attribute">...</span>
-</code></pre><p><a href="jameblunt1973.github.io">blog</a></p>
-<p><img src="http://img1.3lian.com/2015/w4/73/d/61.jpg" alt="小道士"></p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1791,7 +1814,7 @@ pre 预格式化的文本 要插入多行代码时不能使用code标签，如�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -57,28 +57,25 @@
 
 
 
-<meta name="description" content="this   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。
-  可以参考”http://blog.jobbole.com/39305/“  常用的调用情况有下面几种，在使用的时候记住使用的环境进行嵌套就行了 。
-1.纯粹的函数调用时，属于全局调用，因此this指向全局window。
-function test(){
-    this.x=1;">
+<meta name="description" content="js中的dom对象，也就是对html的操作 一.获取到html中元素
+通过id获取：var document.getElementById(&quot;id名&quot;)/document.querySelector(&quot;#id名&quot;)
+通过class名获取：var document.getElementsByClassName(&quot;class名&quot;)/document.querySelector(&quot;.class名&quot;)
+通">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js中的this运用">
-<meta property="og:url" content="http://yoursite.com/2015/12/05/js中的this使用/index.html">
+<meta property="og:title" content="js对dom的操作">
+<meta property="og:url" content="http://yoursite.com/2016/03/05/js对dom的操作/index.html">
 <meta property="og:site_name" content="前端小站">
-<meta property="og:description" content="this   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。
-  可以参考”http://blog.jobbole.com/39305/“  常用的调用情况有下面几种，在使用的时候记住使用的环境进行嵌套就行了 。
-1.纯粹的函数调用时，属于全局调用，因此this指向全局window。
-function test(){
-    this.x=1;">
-<meta property="og:updated_time" content="2016-03-01T09:53:56.000Z">
+<meta property="og:description" content="js中的dom对象，也就是对html的操作 一.获取到html中元素
+通过id获取：var document.getElementById(&quot;id名&quot;)/document.querySelector(&quot;#id名&quot;)
+通过class名获取：var document.getElementsByClassName(&quot;class名&quot;)/document.querySelector(&quot;.class名&quot;)
+通">
+<meta property="og:updated_time" content="2016-03-05T08:12:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js中的this运用">
-<meta name="twitter:description" content="this   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。
-  可以参考”http://blog.jobbole.com/39305/“  常用的调用情况有下面几种，在使用的时候记住使用的环境进行嵌套就行了 。
-1.纯粹的函数调用时，属于全局调用，因此this指向全局window。
-function test(){
-    this.x=1;">
+<meta name="twitter:title" content="js对dom的操作">
+<meta name="twitter:description" content="js中的dom对象，也就是对html的操作 一.获取到html中元素
+通过id获取：var document.getElementById(&quot;id名&quot;)/document.querySelector(&quot;#id名&quot;)
+通过class名获取：var document.getElementsByClassName(&quot;class名&quot;)/document.querySelector(&quot;.class名&quot;)
+通">
 
 
 
@@ -96,7 +93,7 @@ function test(){
   };
 </script>
 
-  <title> js中的this运用 | 前端小站 </title>
+  <title> js对dom的操作 | 前端小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -216,7 +213,7 @@ function test(){
             
             
               
-                js中的this运用
+                js对dom的操作
               
             
           </h1>
@@ -228,8 +225,8 @@ function test(){
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-05T17:18:43+08:00" content="2015-12-05">
-              2015-12-05
+            <time itemprop="dateCreated" datetime="2016-03-05T16:09:02+08:00" content="2016-03-05">
+              2016-03-05
             </time>
           </span>
 
@@ -254,66 +251,41 @@ function test(){
       
 
       
-        <h2 id="this">this</h2><p>   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。<br></p>
-<p>  可以参考”<a href="http://blog.jobbole.com/39305/" target="_blank" rel="external">http://blog.jobbole.com/39305/</a>“<br>  常用的调用情况有下面几种，在使用的时候记住使用的环境进行嵌套就行了 。</p>
-<p>1.纯粹的函数调用时，属于全局调用，因此this指向全局window。</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>{
-    <span class="keyword">this</span>.x=<span class="number">1</span>;
-    alert(<span class="keyword">this</span>.x);      
-}     
-test();<span class="comment">//1</span>
-</code></pre><p> 为了证明this指向全局对象，以下代码等同于上边：</p>
-<pre><code>var x=<span class="number">1</span>;
-<span class="function">fucntion <span class="title">test</span><span class="params">()</span></span>{
-    alert(<span class="keyword">this</span>.x)
-}
-  test();<span class="comment">//1</span>
-</code></pre><p>2.当函数作为对象的方法调用时，this指向该对象。</p>
-<pre><code>例：<span class="keyword">var</span> obj= {
-    x:<span class="number">10</span>,
-    y:<span class="number">20</span>,
-    fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-        <span class="keyword">this</span>.x = <span class="number">20</span>;
-        <span class="built_in">console</span>.log(<span class="keyword">this</span>)<span class="comment">//this指向obj</span>
-    }
-}
-fn()
-</code></pre><p>3.当函数作为弹出函数调用时，this指向全局对象（严格模式时，为undefined）</p>
-<p>3.作为构造函数中的this时，指向创建该函数的对象</p>
-<pre><code>例：<span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
-        <span class="keyword">var</span> i = <span class="number">0</span> ;
-        <span class="keyword">var</span> j = <span class="number">0</span> ;
-        <span class="keyword">this</span>.x=<span class="number">1</span>;
-         <span class="built_in">console</span>.log(<span class="keyword">this</span>)
-    }
-fn2 = <span class="keyword">new</span> fn1();
-fn2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-      <span class="keyword">this</span>.y=<span class="number">1</span>;
-      <span class="built_in">console</span>.log(<span class="keyword">this</span>)<span class="comment">//this指向fn1</span>
- }
- fn1(fn2) 
-</code></pre><p>4.apply调用</p>
-<p>apply()是函数对象的一个方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数。</p>
-<pre><code><span class="keyword">var</span> x = <span class="number">0</span>;
-
-　　<span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>{
-
-　　　　alert(<span class="keyword">this</span>.x);
-
-　　}
-
-　　<span class="keyword">var</span> o={};
-
-　　o.x = <span class="number">1</span>;
-
-　　o.m = test;
-
-　　o.m.apply(); <span class="comment">//0 </span>
-</code></pre><p>嵌套函数中的this不会继承上层函数的this，如果需要，可以用一个变量保存上层函数的this。</p>
-<pre><code>再总结的简单点，如果在函数中使用了<span class="keyword">this</span>，只有在该函数直接
-被某对象调用时，该<span class="keyword">this</span>才指向该对象。正常函数的调用，<span class="keyword">this</span>
-指的是<span class="built_in">window</span>，特殊函数的调用，<span class="keyword">this</span>指象对象。函数声明、
-匿名函数和函数表达式在全局中调用 <span class="keyword">this</span>指向<span class="built_in">window</span>
+        <h2 id="js中的dom对象，也就是对html的操作">js中的dom对象，也就是对html的操作</h2><p> 一.获取到html中元素</p>
+<pre><code>通过id获取：<span class="tag">var</span> document.<span class="function"><span class="title">getElementById</span><span class="params">(<span class="string">"id名"</span>)</span></span>/document.<span class="function"><span class="title">querySelector</span><span class="params">(<span class="string">"#id名"</span>)</span></span>
+通过class名获取：<span class="tag">var</span> document.<span class="function"><span class="title">getElementsByClassName</span><span class="params">(<span class="string">"class名"</span>)</span></span>/document.<span class="function"><span class="title">querySelector</span><span class="params">(<span class="string">".class名"</span>)</span></span>
+通过标签获取：<span class="tag">var</span> documnet.<span class="function"><span class="title">getElementsByTagName</span><span class="params">(<span class="string">"标签名"</span>)</span></span>/document.<span class="function"><span class="title">querySelector</span><span class="params">(<span class="string">"标签名"</span>)</span></span>
+</code></pre><p>二、改变html</p>
+<pre><code>改变输出流：<span class="built_in">document</span>.write(Date());向网页中添加今天的日期。
+改变html元素的内容：<span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">'p'</span>).innerHTML=<span class="string">"内容"</span>。
+改变html元素的属性：<span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">"img"</span>).src=<span class="string">"新的路径"</span>
+</code></pre><p>三、改变css</p>
+<pre><code><span class="built_in">document</span>.getElementById(id).style.property=<span class="keyword">new</span> style
+例：<span class="built_in">document</span>.getElementById(<span class="string">"p2"</span>).style.color=<span class="string">"blue"</span>;
+</code></pre><p>四、dom事件</p>
+<pre><code>点击事件：onclick
+onmousedown/onmouseup:首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件。
+onload 和 onunload 事件会在用户进入或离开页面时被触发。
+onload 和 onunload 事件可用于处理 cookie
+onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。
+onchange:常结合对输入字段的验证来使用。适用于<span class="tag">&lt;<span class="title">input</span>&gt;</span> <span class="tag">&lt;<span class="title">textarea</span>&gt;</span> <span class="tag">&lt;<span class="title">select</span>&gt;</span>。
+onmouseover和onmouseout:用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数
+onfocus：在对象获得焦点时发生。
+</code></pre><p>五、对dom节点的操作（添加、删除html元素）</p>
+<pre><code>创建新的HTML节点:必须先创建该元素，在向一个已存在的元素添加该元素
+    var para = document.createElement('p')
+    var div1=document.createElement('div')
+    div1.appendChild(para)
+删除已有的HTML元素:你必须首先获取该元素
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"div1"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p1"</span>&gt;</span>这是一个段落。<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p2"</span>&gt;</span>这是另一个段落。<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+        <span class="keyword">var</span> parent=<span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);
+        <span class="keyword">var</span> child=<span class="built_in">document</span>.getElementById(<span class="string">"p1"</span>);
+        parent.removeChild(child);
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>                    
 </code></pre>
       
     </div>
@@ -325,17 +297,13 @@ fn2 = <span class="function"><span class="keyword">function</span>(<span class="
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/25/js作用域/" rel="next" title="js变量的作用域">
-                <i class="fa fa-chevron-left"></i> js变量的作用域
+              <a href="/2016/03/01/apply和call方法/" rel="next" title="apply和call方法">
+                <i class="fa fa-chevron-left"></i> apply和call方法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/25/html回顾/" rel="prev" title="html回顾">
-                html回顾 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -439,7 +407,7 @@ fn2 = <span class="function"><span class="keyword">function</span>(<span class="
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">1.</span> <span class="nav-text">this</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js中的dom对象，也就是对html的操作"><span class="nav-number">1.</span> <span class="nav-text">js中的dom对象，也就是对html的操作</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
