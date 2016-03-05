@@ -372,7 +372,25 @@ onfocus：在对象获得焦点时发生。
       
         
           
-            <p>## </p>
+            <h2 id="js中的call函数和apply函数">js中的call函数和apply函数</h2><h3 id="a-call(b)">a.call(b)</h3><pre><code> a.call(b,a1,a2)
+  把a对象的方法应用到b对象上。b对象也就拥有了a对象所有的内容。b继承a对象。一般用于对象的继承。
+  例：<span class="function"><span class="keyword">function</span> <span class="title">class1</span><span class="params">()</span>
+</span>{
+   <span class="keyword">this</span>.name = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    alert(<span class="string">"class1的方法name()"</span>);
+   }
+}
+<span class="function"><span class="keyword">function</span> <span class="title">class2</span><span class="params">()</span>
+</span>{
+class1.call(<span class="keyword">this</span>);<span class="comment">//要想实现class2继承class1 this就是当前对象class2。</span>
+
+}
+</code></pre><h3 id="a-apply(b)">a.apply(b)</h3><pre><code><span class="tag">a</span>.<span class="function"><span class="title">apply</span><span class="params">(obj,args)</span></span>
+obj：这个对象代替a对象
+args：这个是数组，它将作为参数传给a
+</code></pre><h3 id="call()和apply()的区别">call()和apply()的区别</h3><p>注意到，call()与apply()的区别：功能一样。第二个参数形式不一样。call传递多个参数，是任意形式。apply第二个参数必须是数组形式。</p>
+<p>用代码来理解它们区别最好：</p>
+<p>a.call(b,2,3); ==&gt;  a.apply(b,[2,3]);//数组形式传入</p>
 
           
         

@@ -57,16 +57,40 @@
 
 
 
-<meta name="description" content="##">
+<meta name="description" content="js中的call函数和apply函数a.call(b) a.call(b,a1,a2)
+  把a对象的方法应用到b对象上。b对象也就拥有了a对象所有的内容。b继承a对象。一般用于对象的继承。
+  例：function class1()
+{
+   this.name = function(){
+    alert(&quot;class1的方法name()&quot;);
+   }
+}
+function class2(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="apply和call方法">
 <meta property="og:url" content="http://yoursite.com/2016/03/01/apply和call方法/index.html">
 <meta property="og:site_name" content="前端小站">
-<meta property="og:description" content="##">
-<meta property="og:updated_time" content="2016-03-01T13:15:17.000Z">
+<meta property="og:description" content="js中的call函数和apply函数a.call(b) a.call(b,a1,a2)
+  把a对象的方法应用到b对象上。b对象也就拥有了a对象所有的内容。b继承a对象。一般用于对象的继承。
+  例：function class1()
+{
+   this.name = function(){
+    alert(&quot;class1的方法name()&quot;);
+   }
+}
+function class2(">
+<meta property="og:updated_time" content="2016-03-05T11:30:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apply和call方法">
-<meta name="twitter:description" content="##">
+<meta name="twitter:description" content="js中的call函数和apply函数a.call(b) a.call(b,a1,a2)
+  把a对象的方法应用到b对象上。b对象也就拥有了a对象所有的内容。b继承a对象。一般用于对象的继承。
+  例：function class1()
+{
+   this.name = function(){
+    alert(&quot;class1的方法name()&quot;);
+   }
+}
+function class2(">
 
 
 
@@ -242,7 +266,25 @@
       
 
       
-        <p>## </p>
+        <h2 id="js中的call函数和apply函数">js中的call函数和apply函数</h2><h3 id="a-call(b)">a.call(b)</h3><pre><code> a.call(b,a1,a2)
+  把a对象的方法应用到b对象上。b对象也就拥有了a对象所有的内容。b继承a对象。一般用于对象的继承。
+  例：<span class="function"><span class="keyword">function</span> <span class="title">class1</span><span class="params">()</span>
+</span>{
+   <span class="keyword">this</span>.name = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    alert(<span class="string">"class1的方法name()"</span>);
+   }
+}
+<span class="function"><span class="keyword">function</span> <span class="title">class2</span><span class="params">()</span>
+</span>{
+class1.call(<span class="keyword">this</span>);<span class="comment">//要想实现class2继承class1 this就是当前对象class2。</span>
+
+}
+</code></pre><h3 id="a-apply(b)">a.apply(b)</h3><pre><code><span class="tag">a</span>.<span class="function"><span class="title">apply</span><span class="params">(obj,args)</span></span>
+obj：这个对象代替a对象
+args：这个是数组，它将作为参数传给a
+</code></pre><h3 id="call()和apply()的区别">call()和apply()的区别</h3><p>注意到，call()与apply()的区别：功能一样。第二个参数形式不一样。call传递多个参数，是任意形式。apply第二个参数必须是数组形式。</p>
+<p>用代码来理解它们区别最好：</p>
+<p>a.call(b,2,3); ==&gt;  a.apply(b,[2,3]);//数组形式传入</p>
 
       
     </div>
@@ -368,7 +410,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js中的call函数和apply函数"><span class="nav-number">1.</span> <span class="nav-text">js中的call函数和apply函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-call(b)"><span class="nav-number">1.1.</span> <span class="nav-text">a.call(b)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-apply(b)"><span class="nav-number">1.2.</span> <span class="nav-text">a.apply(b)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call()和apply()的区别"><span class="nav-number">1.3.</span> <span class="nav-text">call()和apply()的区别</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
