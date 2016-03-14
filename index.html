@@ -212,6 +212,172 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/14/微信开发的环境配置流程/" itemprop="url">
+                  微信开发的环境配置流程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-14T19:06:59+08:00" content="2016-03-14">
+              2016-03-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>好久没写东西了，闲来无事，写点东西。每天过的充实点。</p>
+<p>##微信开发<br>  一、首先大家应该了解以下内容：</p>
+<p>  1、一个注册好的微信公众号，订阅号和服务号都行。不过一般个人开发用的是订阅号。服务号需要企业的认证才能申请。比较麻烦。至于需要哪一种，看个人选择。  </p>
+<p>  2、一个版本控制工具GitLab和SourceTree(本地的软件)。对修改后的代码进行一个跟新和版本的控制。GitLab还具备服务器的作用。使得开发的微信页面得以显示。(当然这里你也可以使用其他的服务器比如说：新浪的SAE工具)   </p>
+<p>  3、下载微信的开发者文档。我们需要用到当中的“微信网页开发”部分的文档。</p>
+<p>  接下来就跟大家分享下具体的操作步骤：</p>
+<p>###微信订阅号的申请：<br>  1、你可以在百度中搜索微信公众平台：进行账号的注册。如下图填写信息完成注册。<br>  <img src="../imgs/weixin.png"><br>  由于我申请的是订阅号，所以在开发中需要借助微信的测试账号进行操作。接下来继续申请测试账号。如下图所示：点击左下角的开发者工具，找到右图的公众平台测试账号<br>    <img src="../imgs/ceshihao.png"><br>  2、进入到测试账号之后，需要记住自己的appID和appsecret账号。在以后的开发文档中需要用到。当然你也可以之后粘贴复制。接着还需要修改“js接口安全域名”，这个域名就是在gitlab上面需要关联的域名了。需要注意的是，这个域名一定要是一级域名。因为使用的是测试号的原因，这里在使用之前需要先关注下测试公众号。具体的方法就是扫描左下角的二维码。以上操作可以参考下图：<br>  <img src="../imgs/jsjiekou.png"></p>
+<p>###GitLab的配置</p>
+<p> 说实话本人是最烦这种配置环境的事情，不过有时候工作需要，我们也是没有办法的，凡事慢慢来吧。<br> 1、登录GitLab，点击左下角的profile setting ，弹出如下页面，设置自己的名字（英文名），自己的邮箱，然后点击左下角的按钮。<br> 如图所示：<br>    <img src="../imgs/git-profile1.png"><br>    <img src="../imgs/git-profile2.png"><br>2、以上设置完之后，点击返回首页，点击help按钮，然后找到右边的ssh，点进去如下图所示，复制例如：ssh-keygen -t rsa -C “zh66j66w66@qq.com”的代码，邮箱以刚才设置的邮箱为准。<br>  如图所示<br>      <img src="../imgs/git-help1.png"><br>    <img src="../imgs/git-help2.png"><br>3、把刚才复制的代码添加到终端中。如下图所示<br>    <img src="../imgs/zhongduan.png"></p>
+<h3 id="对微信开发文档的操作">对微信开发文档的操作</h3><p>1、找到微信的开发者文档。我们需要用到当中的“微信网页开发”部分中的“微信JS-SDK”文档。 在网页的底部找到示例代码：下载下来。这是一个文件。我们可以需要用到文件中的php中的sample.php文件。<br> 代码如下：需要改动的看后面的注释部分</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span>
+<span class="keyword">require_once</span> <span class="string">"jssdk.php"</span>;
+<span class="variable">$jssdk</span> = <span class="keyword">new</span> JSSDK(<span class="string">"wxe7438173d2c401dd"</span>, <span class="string">"47b14e27c12de2e3213be5721ccab28c"</span>);<span class="comment">//这里是要用字上面需要大家记住的appID和appsecret账号</span>
+<span class="variable">$signPackage</span> = <span class="variable">$jssdk</span>-&gt;GetSignPackage();
+<span class="preprocessor">?&gt;</span></span>
+<span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://res.wx.qq.com/open/js/jweixin-1.0.0.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="actionscript">
+  <span class="comment">/*
+   * 注意：
+   * 1. 所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+   * 2. 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+   * 3. 常见问题及完整 JS-SDK 文档地址：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
+   *
+   * 开发中遇到问题详见文档“附录5-常见错误及解决办法”解决，如仍未能解决可通过以下渠道反馈：
+   * 邮箱地址：weixin-open@qq.com
+   * 邮件主题：【微信JS-SDK反馈】具体问题
+   * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
+   */</span>
+  wx.config({
+    debug: <span class="literal">true</span>,
+    appId: <span class="string">'&lt;?php echo $signPackage["appId"];?&gt;'</span>,
+    timestamp: &lt;?php echo $signPackage[<span class="string">"timestamp"</span>];?&gt;,
+    nonceStr: <span class="string">'&lt;?php echo $signPackage["nonceStr"];?&gt;'</span>,
+    signature: <span class="string">'&lt;?php echo $signPackage["signature"];?&gt;'</span>,
+    jsApiList: [
+      <span class="comment">// 所有要调用的 API 都要加到这个列表中。这里是添加文件的代码。具体的参考开发文档。</span>
+        <span class="string">'onMenuShareTimeline'</span>,
+        <span class="string">'onMenuShareAppMessage'</span> 
+    ]
+  });
+  wx.ready(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+    <span class="keyword">var</span> link=location.href;
+    <span class="comment">// 在这里调用 API</span>
+    wx.onMenuShareTimeline({
+    title: <span class="string">'什么玩意'</span>, <span class="comment">// 分享标题</span>
+    link: <span class="string">''</span>, <span class="comment">// 分享链接</span>
+    imgUrl: <span class="string">''</span>, <span class="comment">// 分享图标</span>
+    success: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{ 
+        <span class="comment">// 用户确认分享后执行的回调函数</span>
+    },
+    cancel: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{ 
+        <span class="comment">// 用户取消分享后执行的回调函数</span>
+    }
+});
+
+    wx.onMenuShareAppMessage({
+    title: <span class="string">'什么意思'</span>, <span class="comment">// 分享标题</span>
+    desc: <span class="string">'没什么意思'</span>, <span class="comment">// 分享描述</span>
+    link: <span class="string">'链接是吧'</span>, <span class="comment">// 分享链接</span>
+    imgUrl: <span class="string">''</span>, <span class="comment">// 分享图标</span>
+    type: <span class="string">''</span>, <span class="comment">// 分享类型,music、video或link，不填默认为link</span>
+    dataUrl: <span class="string">''</span>, <span class="comment">// 如果type是music或video，则要提供数据链接，默认为空</span>
+    success: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{ 
+        <span class="comment">// 用户确认分享后执行的回调函数</span>
+        alert(<span class="string">"什么意思"</span>);
+    },
+    cancel: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{ 
+        <span class="comment">// 用户取消分享后执行的回调函数</span>
+    }
+});
+  });
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><h3 id="使用SourceTree对文件进行管理：">使用SourceTree对文件进行管理：</h3><p>   1、打开界面如下<br>   <img src="../imgs/source.png"><br>    2、对修改的文件：先进行提交，在进行推送。<br>    3、之后登录例如：“<a href="http://sh01-james.ilanou.com/sample.php”进行在手机上进行二维码的扫描。" target="_blank" rel="external">http://sh01-james.ilanou.com/sample.php”进行在手机上进行二维码的扫描。</a><br>    之后就可以看到自己在开发者文档中修改的内容。包括主题、描述、图片、内容等。<br>    经过以上的千辛万苦终于完成了配置。其实这才是微信号开发的开始，接下来继续努力吧！</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/05/js对dom的操作/" itemprop="url">
                   js对dom的操作
                 </a>
@@ -1606,223 +1772,6 @@ fn2 = <span class="function"><span class="keyword">function</span>(<span class="
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/11/25/js作用域/" itemprop="url">
-                  js变量的作用域
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-11-25T16:59:17+08:00" content="2015-11-25">
-              2015-11-25
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="浏览器对js文件的解析机制">浏览器对js文件的解析机制</h1><pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{};
-fn();
-<span class="built_in">console</span>.log(i);
-<span class="keyword">var</span> i=<span class="number">10</span>;
-<span class="keyword">var</span> k=<span class="number">20</span>;
-<span class="built_in">console</span>.log(k);
-首先，浏览器在解析这段代码前，是先把代码中的变量 i和k放到了代码最前面。还有函数表达式。
-上例：
- <span class="keyword">var</span> i ;
- <span class="keyword">var</span> k ;
- <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{};
- fn();
- <span class="built_in">console</span>.log(i);<span class="comment">//此处的console.log(i) 的结果是undefind；从执行循序来看是无法获取到i的值的。</span>
- i=<span class="number">10</span>;
- k=<span class="number">20</span>;
- <span class="built_in">console</span>.log(k);<span class="comment">//此处k的值就是打印出来就是 20；从执行顺序来看，可以获取到k的值。</span>
-</code></pre><p>#变量的作用域</p>
-<h2 id="函数的书写形式">函数的书写形式</h2><pre><code>要想了解变量的作用域需要先明白创建函数的三种形式
-声明函数是使用<span class="function"><span class="keyword">function</span>关键字+函数名来声明的函数</span>
-例：
-    <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span>{</span>
-
-    };
-函数表达式是使用<span class="function"><span class="keyword">function</span>关键字，但没有函数名，把函数赋值给一个变量的函数。</span>
-例：
-        var <span class="built_in">i</span> = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-
-        };
-匿名函数是直接使用关键字来声明的函数的。
-例：
-    <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-    };
-函数表达式和声明函数的区别：
- 函数表达式可以直接使用()操作符。()表示立即执行。声明函数不可以直接使用。
- 想要使用的话，可以先把声明函数包装为函数表达式的形式。可以在对声明函数添加+、-、（）等符号。推荐使用().
- 例：声明函数包装为函数表达式，使用();
-        (<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-             console.<span class="built_in">log</span>(<span class="string">'嘿嘿！'</span>)
-        })();
-         函数表达式使用();
-         a = <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span>{</span>
-             console.<span class="built_in">log</span>(<span class="string">'啊，你是嘿嘿呀！'</span>)
-         }();
-</code></pre><h2 id="作用域">作用域</h2><pre><code>首先了解下全局变量和局部变量。
-    在js中 使用 <span class="keyword">var</span> 的定义的变量叫做局部变量。直接定义的变量就是全局变量。
-例：
- <span class="keyword">var</span> i＝ <span class="number">10</span>; i 这个变量就是局部变量
-  i＝ <span class="number">10</span> ; i 这个变量就是全局变量
-变量的作用域
-    例<span class="number">1</span>：
-     <span class="keyword">var</span> a = <span class="number">10</span>;<span class="comment">//a 是局部变量，如果它没有在function中，它的作用域就是整个js；</span>
-      b = <span class="number">20</span>; <span class="comment">// b是全局变量，作用域是整个js；</span>
-     <span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>)</span>{
-         <span class="keyword">var</span> c =<span class="number">30</span> ; <span class="comment">//c是局部变量，它的作用域是在fn函数下。</span>
-         <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
-             i = <span class="number">40</span>; <span class="comment">//i 是全局变量，它的作用域是在整个js下。</span>
-             <span class="keyword">var</span> c ＝ <span class="number">40</span> ;<span class="comment">//c 是局部变量，它的作用域是在fn1下。</span>
-             <span class="keyword">var</span> d = <span class="number">50</span>;  <span class="comment">//d 是局部变量，它的作用域是在fn1下。</span>
-             <span class="built_in">console</span>.log(a);
-                }
-         fn1();
-
-     }
-     fn()
-     例<span class="number">2</span>：
-     <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{
-         <span class="keyword">var</span> c=<span class="number">30</span>;
-         <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
-          <span class="built_in">console</span>.log(c)<span class="comment">//此时c的值就使它父级function的c的值30；</span>
-         }
-     }
- 小结;当变量是全局变量时，不论变量有没有在<span class="function"><span class="keyword">function</span>下，变量的作用域都是整个<span class="title">js</span>。当变量定义为局部变量时，
- 如果变量没有在<span class="title">function</span>下，它的作用域就是整个<span class="title">js</span>。如果在<span class="title">function</span>下，就作用域这个<span class="title">function</span>。
- 如果在<span class="title">function</span>下有使用变量，却没有定义时，
- 就往上找到它的父级<span class="title">function</span>，继承它父级<span class="title">function</span>的值。</span>
-</code></pre><h2 id="函数的使用方法拓展">函数的使用方法拓展</h2><h3 id="在外部使用函数内部的变量">在外部使用函数内部的变量</h3><pre><code>例<span class="number">1</span>：
-  <span class="keyword">var</span>  j=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-          <span class="keyword">var</span> max = <span class="number">10</span>;
-          <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-            <span class="keyword">return</span> <span class="number">1</span>;
-          }()
-  }        
- <span class="keyword">var</span> a = j ();<span class="comment">//把值赋予a 方便调用。</span>
- <span class="built_in">console</span>.log(j());
- 例<span class="number">2</span>：
- <span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>)</span>{
-         <span class="keyword">var</span> max = <span class="number">10</span>;
-         <span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>{
-              <span class="keyword">if</span>(num&gt;max){
-                  <span class="built_in">console</span>.log(max);
-                  <span class="built_in">console</span>.log(num);
-
-              }
-
-         }
-         <span class="keyword">return</span> fn2;<span class="comment">//fn2 是fn函数的返回值</span>
-  }
-     <span class="keyword">var</span> news=fn();<span class="comment">//fn()是等于fn2的。</span>
-     news(<span class="number">30</span>);<span class="comment">//news 调用的是fn2</span>
-</code></pre><h3 id="计算函数参数值的和的方法">计算函数参数值的和的方法</h3><pre><code>      例<span class="number">1</span>：<span class="function">function <span class="title">jisuan</span><span class="params">()</span></span>{
-      var fuhao = arguments[arguments.length-<span class="number">1</span>];
-
-    <span class="comment">// var  changdu = arguments.length;</span>
-
-    <span class="keyword">if</span>(fuhao==<span class="string">'+'</span>){
-        <span class="keyword">for</span>(var i= <span class="number">1</span> ;i&lt;arguments.length-<span class="number">1</span>;i++){
-
-            arguments[<span class="number">0</span>]+=arguments[i]
-        }
-        <span class="keyword">return</span> arguments[<span class="number">0</span>];
-        } <span class="keyword">else</span> <span class="keyword">if</span> (fuhao==<span class="string">'-'</span>) {
-        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
-            arguments[<span class="number">0</span>]-=arguments[i]
-        }
-        <span class="keyword">return</span> arguments[<span class="number">0</span>];
-    } <span class="keyword">else</span> <span class="keyword">if</span> (fuhao==<span class="string">'*'</span>){
-        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
-            arguments[<span class="number">0</span>]*=arguments[i]
-        }
-        <span class="keyword">return</span> arguments[<span class="number">0</span>];
-    }<span class="keyword">else</span> <span class="keyword">if</span> (fuhao=<span class="string">'/'</span>) {
-        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
-            arguments[<span class="number">0</span>]/=arguments[i]
-        }
-        <span class="keyword">return</span> arguments[<span class="number">0</span>];
-       }
-
-};
-jisuan(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="string">'+'</span>);
-console.<span class="built_in">log</span>(jisuan(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="string">'+'</span>));
-console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'-'</span>));
-console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'*'</span>));
-console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'/'</span>));
-</code></pre><p>  on the way <img src="http://sudasuta.com/wp-content/uploads/2016/02/Andy-Lee-31.jpg" alt="路"> </p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1869,7 +1818,7 @@ console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

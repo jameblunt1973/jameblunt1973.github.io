@@ -212,6 +212,223 @@
             
               
                 
+                <a class="post-title-link" href="/2015/11/25/js作用域/" itemprop="url">
+                  js变量的作用域
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-25T16:59:17+08:00" content="2015-11-25">
+              2015-11-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="浏览器对js文件的解析机制">浏览器对js文件的解析机制</h1><pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{};
+fn();
+<span class="built_in">console</span>.log(i);
+<span class="keyword">var</span> i=<span class="number">10</span>;
+<span class="keyword">var</span> k=<span class="number">20</span>;
+<span class="built_in">console</span>.log(k);
+首先，浏览器在解析这段代码前，是先把代码中的变量 i和k放到了代码最前面。还有函数表达式。
+上例：
+ <span class="keyword">var</span> i ;
+ <span class="keyword">var</span> k ;
+ <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{};
+ fn();
+ <span class="built_in">console</span>.log(i);<span class="comment">//此处的console.log(i) 的结果是undefind；从执行循序来看是无法获取到i的值的。</span>
+ i=<span class="number">10</span>;
+ k=<span class="number">20</span>;
+ <span class="built_in">console</span>.log(k);<span class="comment">//此处k的值就是打印出来就是 20；从执行顺序来看，可以获取到k的值。</span>
+</code></pre><p>#变量的作用域</p>
+<h2 id="函数的书写形式">函数的书写形式</h2><pre><code>要想了解变量的作用域需要先明白创建函数的三种形式
+声明函数是使用<span class="function"><span class="keyword">function</span>关键字+函数名来声明的函数</span>
+例：
+    <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span>{</span>
+
+    };
+函数表达式是使用<span class="function"><span class="keyword">function</span>关键字，但没有函数名，把函数赋值给一个变量的函数。</span>
+例：
+        var <span class="built_in">i</span> = <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+
+        };
+匿名函数是直接使用关键字来声明的函数的。
+例：
+    <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+    };
+函数表达式和声明函数的区别：
+ 函数表达式可以直接使用()操作符。()表示立即执行。声明函数不可以直接使用。
+ 想要使用的话，可以先把声明函数包装为函数表达式的形式。可以在对声明函数添加+、-、（）等符号。推荐使用().
+ 例：声明函数包装为函数表达式，使用();
+        (<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+             console.<span class="built_in">log</span>(<span class="string">'嘿嘿！'</span>)
+        })();
+         函数表达式使用();
+         a = <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span>{</span>
+             console.<span class="built_in">log</span>(<span class="string">'啊，你是嘿嘿呀！'</span>)
+         }();
+</code></pre><h2 id="作用域">作用域</h2><pre><code>首先了解下全局变量和局部变量。
+    在js中 使用 <span class="keyword">var</span> 的定义的变量叫做局部变量。直接定义的变量就是全局变量。
+例：
+ <span class="keyword">var</span> i＝ <span class="number">10</span>; i 这个变量就是局部变量
+  i＝ <span class="number">10</span> ; i 这个变量就是全局变量
+变量的作用域
+    例<span class="number">1</span>：
+     <span class="keyword">var</span> a = <span class="number">10</span>;<span class="comment">//a 是局部变量，如果它没有在function中，它的作用域就是整个js；</span>
+      b = <span class="number">20</span>; <span class="comment">// b是全局变量，作用域是整个js；</span>
+     <span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>)</span>{
+         <span class="keyword">var</span> c =<span class="number">30</span> ; <span class="comment">//c是局部变量，它的作用域是在fn函数下。</span>
+         <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
+             i = <span class="number">40</span>; <span class="comment">//i 是全局变量，它的作用域是在整个js下。</span>
+             <span class="keyword">var</span> c ＝ <span class="number">40</span> ;<span class="comment">//c 是局部变量，它的作用域是在fn1下。</span>
+             <span class="keyword">var</span> d = <span class="number">50</span>;  <span class="comment">//d 是局部变量，它的作用域是在fn1下。</span>
+             <span class="built_in">console</span>.log(a);
+                }
+         fn1();
+
+     }
+     fn()
+     例<span class="number">2</span>：
+     <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{
+         <span class="keyword">var</span> c=<span class="number">30</span>;
+         <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
+          <span class="built_in">console</span>.log(c)<span class="comment">//此时c的值就使它父级function的c的值30；</span>
+         }
+     }
+ 小结;当变量是全局变量时，不论变量有没有在<span class="function"><span class="keyword">function</span>下，变量的作用域都是整个<span class="title">js</span>。当变量定义为局部变量时，
+ 如果变量没有在<span class="title">function</span>下，它的作用域就是整个<span class="title">js</span>。如果在<span class="title">function</span>下，就作用域这个<span class="title">function</span>。
+ 如果在<span class="title">function</span>下有使用变量，却没有定义时，
+ 就往上找到它的父级<span class="title">function</span>，继承它父级<span class="title">function</span>的值。</span>
+</code></pre><h2 id="函数的使用方法拓展">函数的使用方法拓展</h2><h3 id="在外部使用函数内部的变量">在外部使用函数内部的变量</h3><pre><code>例<span class="number">1</span>：
+  <span class="keyword">var</span>  j=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+          <span class="keyword">var</span> max = <span class="number">10</span>;
+          <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            <span class="keyword">return</span> <span class="number">1</span>;
+          }()
+  }        
+ <span class="keyword">var</span> a = j ();<span class="comment">//把值赋予a 方便调用。</span>
+ <span class="built_in">console</span>.log(j());
+ 例<span class="number">2</span>：
+ <span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>)</span>{
+         <span class="keyword">var</span> max = <span class="number">10</span>;
+         <span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>{
+              <span class="keyword">if</span>(num&gt;max){
+                  <span class="built_in">console</span>.log(max);
+                  <span class="built_in">console</span>.log(num);
+
+              }
+
+         }
+         <span class="keyword">return</span> fn2;<span class="comment">//fn2 是fn函数的返回值</span>
+  }
+     <span class="keyword">var</span> news=fn();<span class="comment">//fn()是等于fn2的。</span>
+     news(<span class="number">30</span>);<span class="comment">//news 调用的是fn2</span>
+</code></pre><h3 id="计算函数参数值的和的方法">计算函数参数值的和的方法</h3><pre><code>      例<span class="number">1</span>：<span class="function">function <span class="title">jisuan</span><span class="params">()</span></span>{
+      var fuhao = arguments[arguments.length-<span class="number">1</span>];
+
+    <span class="comment">// var  changdu = arguments.length;</span>
+
+    <span class="keyword">if</span>(fuhao==<span class="string">'+'</span>){
+        <span class="keyword">for</span>(var i= <span class="number">1</span> ;i&lt;arguments.length-<span class="number">1</span>;i++){
+
+            arguments[<span class="number">0</span>]+=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+        } <span class="keyword">else</span> <span class="keyword">if</span> (fuhao==<span class="string">'-'</span>) {
+        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
+            arguments[<span class="number">0</span>]-=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+    } <span class="keyword">else</span> <span class="keyword">if</span> (fuhao==<span class="string">'*'</span>){
+        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
+            arguments[<span class="number">0</span>]*=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+    }<span class="keyword">else</span> <span class="keyword">if</span> (fuhao=<span class="string">'/'</span>) {
+        <span class="keyword">for</span>(var i = <span class="number">1</span>;i&lt;arguments.length-<span class="number">1</span>;i++){
+            arguments[<span class="number">0</span>]/=arguments[i]
+        }
+        <span class="keyword">return</span> arguments[<span class="number">0</span>];
+       }
+
+};
+jisuan(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="string">'+'</span>);
+console.<span class="built_in">log</span>(jisuan(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="string">'+'</span>));
+console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'-'</span>));
+console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'*'</span>));
+console.<span class="built_in">log</span>(jisuan(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'/'</span>));
+</code></pre><p>  on the way <img src="http://sudasuta.com/wp-content/uploads/2016/02/Andy-Lee-31.jpg" alt="路"> </p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/11/25/html小结/" itemprop="url">
                   html和css知识总结
                 </a>
@@ -420,7 +637,7 @@ pre 预格式化的文本 要插入多行代码时不能使用code标签，如�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
