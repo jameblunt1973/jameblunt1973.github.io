@@ -57,32 +57,28 @@
 
 
 
-<meta name="description" content="javascript  浏览器脚本语言 最大的特点就是单线程了。JavaScript的主要用途是与用户互动，以及操作DOM。负责内容 样式 行为分离环节中的分离部分。
-－ js的组成
-
-ECMAScript 核心 几乎没有兼容问题 担任解析器的角色 处理我们的逻辑代码 
-
-DOM  文档对象模型；文档指的就是网页；把网页变成一个JS可以操作的对象；给了JS可以操作页面元素的能力；document;">
+<meta name="description" content="input的文本类型&amp;lt;input type=&quot;text&quot; name=&quot;mingzi&quot; value=&quot;名字&quot; checked=&quot;checked&quot;/&amp;gt;
+我们可以通过以下方式获取到input的value值
+例1：$(&quot;input&quot;).val();
+例2：$(&quot;input&quot;).attr(&quot;value&quot;);
+例3：$(&quot;input&quot;).attr(&quot;value&quot;,&quot;名字&quot;);这个是修改input的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js小结">
-<meta property="og:url" content="http://yoursite.com/2016/03/01/js小结/index.html">
+<meta property="og:title" content="获取表单值的方法">
+<meta property="og:url" content="http://yoursite.com/2016/03/24/获取表单值的方法/index.html">
 <meta property="og:site_name" content="前端小站">
-<meta property="og:description" content="javascript  浏览器脚本语言 最大的特点就是单线程了。JavaScript的主要用途是与用户互动，以及操作DOM。负责内容 样式 行为分离环节中的分离部分。
-－ js的组成
-
-ECMAScript 核心 几乎没有兼容问题 担任解析器的角色 处理我们的逻辑代码 
-
-DOM  文档对象模型；文档指的就是网页；把网页变成一个JS可以操作的对象；给了JS可以操作页面元素的能力；document;">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/94752-7c5eb2f781cbd6f6.png">
-<meta property="og:updated_time" content="2016-03-05T08:22:06.000Z">
+<meta property="og:description" content="input的文本类型&amp;lt;input type=&quot;text&quot; name=&quot;mingzi&quot; value=&quot;名字&quot; checked=&quot;checked&quot;/&amp;gt;
+我们可以通过以下方式获取到input的value值
+例1：$(&quot;input&quot;).val();
+例2：$(&quot;input&quot;).attr(&quot;value&quot;);
+例3：$(&quot;input&quot;).attr(&quot;value&quot;,&quot;名字&quot;);这个是修改input的">
+<meta property="og:updated_time" content="2016-03-24T07:10:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js小结">
-<meta name="twitter:description" content="javascript  浏览器脚本语言 最大的特点就是单线程了。JavaScript的主要用途是与用户互动，以及操作DOM。负责内容 样式 行为分离环节中的分离部分。
-－ js的组成
-
-ECMAScript 核心 几乎没有兼容问题 担任解析器的角色 处理我们的逻辑代码 
-
-DOM  文档对象模型；文档指的就是网页；把网页变成一个JS可以操作的对象；给了JS可以操作页面元素的能力；document;">
+<meta name="twitter:title" content="获取表单值的方法">
+<meta name="twitter:description" content="input的文本类型&amp;lt;input type=&quot;text&quot; name=&quot;mingzi&quot; value=&quot;名字&quot; checked=&quot;checked&quot;/&amp;gt;
+我们可以通过以下方式获取到input的value值
+例1：$(&quot;input&quot;).val();
+例2：$(&quot;input&quot;).attr(&quot;value&quot;);
+例3：$(&quot;input&quot;).attr(&quot;value&quot;,&quot;名字&quot;);这个是修改input的">
 
 
 
@@ -100,7 +96,7 @@ DOM  文档对象模型；文档指的就是网页；把网页变成一个JS可�
   };
 </script>
 
-  <title> js小结 | 前端小站 </title>
+  <title> 获取表单值的方法 | 前端小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -220,7 +216,7 @@ DOM  文档对象模型；文档指的就是网页；把网页变成一个JS可�
             
             
               
-                js小结
+                获取表单值的方法
               
             
           </h1>
@@ -232,8 +228,8 @@ DOM  文档对象模型；文档指的就是网页；把网页变成一个JS可�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-01T16:25:48+08:00" content="2016-03-01">
-              2016-03-01
+            <time itemprop="dateCreated" datetime="2016-03-24T11:36:48+08:00" content="2016-03-24">
+              2016-03-24
             </time>
           </span>
 
@@ -258,154 +254,36 @@ DOM  文档对象模型；文档指的就是网页；把网页变成一个JS可�
       
 
       
-        <p>javascript  浏览器脚本语言 最大的特点就是单线程了。JavaScript的主要用途是与用户互动，以及操作DOM。负责内容 样式 行为分离环节中的分离部分。</p>
-<p>－ js的组成</p>
-<ul>
-<li><p>ECMAScript 核心 几乎没有兼容问题 担任解析器的角色 处理我们的逻辑代码 </p>
-</li>
-<li><p>DOM  文档对象模型；文档指的就是网页；把网页变成一个JS可以操作的对象；给了JS可以操作页面元素的能力；document;有一些兼容性问题；</p>
-</li>
-<li><p>BOM 浏览器对象模型；给了JS操作浏览器的能力；window；有许多兼容性问题</p>
-</li>
-</ul>
-<p>－ js的引用</p>
-<p>－ 外部文件 script标签 src属性</p>
-<p>－ 内部 script标签区域 </p>
-<p>－ 注释方式 单行注释  多行 注释</p>
-<p>－ 数据类型 </p>
-<pre><code>基本类型（primitive） 
-
-<span class="number">1.</span>Undefined
-
-在使用<span class="keyword">var</span>声明变量，但未对其加以初始化时，这个变量的类型就是<span class="literal">undefined</span>，且其默认初始化值为<span class="literal">undefined</span>
-
-对未声明与初始化的变量，直接使用，那么这个变量的类型也是<span class="literal">undefined</span>，但是没有默认初始化值。
-
-<span class="keyword">type</span> test;<span class="comment">//undefined  直接调用就会报错</span>
-
-<span class="number">2.</span>Null
-
-<span class="literal">null</span>类型的默认值是<span class="literal">null</span>，表示一个空对象指针,如果定义的变量准备在将来用于保存对象,那么就该将该变量初始化为<span class="literal">null</span>。
-
-<span class="number">3.</span><span class="built_in">Boolean</span>
-
-该类型有两个值：<span class="literal">true</span> <span class="literal">false</span>
-
-<span class="built_in">Boolean</span>()方法 可以转换其他数据类型为布尔值
-</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/94752-7c5eb2f781cbd6f6.png"></p>
-<pre><code><span class="number">4</span><span class="class">.Number</span>
-
-整数 可以通过<span class="number">10</span>进制 <span class="number">8</span>进制 <span class="number">16</span>进制表示
-
-浮点数 该数值必须包含一个小数点，小数点后面必须有一位数字，如果小数点后只有<span class="number">0</span>，自动转换成整数
-
-浮点数占据的空间内存是内存的两倍，极大极小的数字会用e科学表示法。
-
-NaN 
-
-<span class="number">1</span>、即非数值，是一个特殊的值，这个数值用于表示一个本来要返回数值的操作数，未返回数值的情况。比如任何数值除以<span class="number">0</span>，本是不符合规范的，js里，这样的操作返回NaN（但是实际上，只有<span class="number">0</span>除以<span class="number">0</span>时返回NaN，其他则无穷值）。
-<span class="number">2</span>、NaN有两个不同寻常的特点：任何涉及NaN的操作都会返回NaN，NaN值与任何值都不相等，包括本身。
-<span class="number">3</span>、<span class="function"><span class="title">isNaN</span><span class="params">()</span></span>函数，这个函数可以判断，传递的参数是否“不是数值”这里涉及数值转换的问题，例如“<span class="number">10</span>”这个字符串就可以转换为<span class="number">10</span>，但是“blue”这个字符串则无法转换为数字，所以<span class="function"><span class="title">isNaN</span><span class="params">(<span class="string">"blue"</span>)</span></span>==true
-
-<span class="function"><span class="title">Number</span><span class="params">()</span></span> 可以    任何类型
-
-<span class="function"><span class="title">parseInt</span><span class="params">()</span></span>  <span class="function"><span class="title">parseFloat</span><span class="params">()</span></span> 只用于字符串类型
-
-
-<span class="number">5</span><span class="class">.string</span> 
-
-
-
-<span class="string">''</span> <span class="string">""</span>单引号 双引号
-
-基本类型的特点：
-
-基本类型的值是不可变得
-
-
-复杂对象类型 Object 对象是属性和方法的集合
-
-基本类型以外 就是引用类型
-
-引用类型的特点
-
-引用类型的值是可变的
-</code></pre><p>－ 变量 var （let const）</p>
-<p>变量是一个杯子，它的类型是由它里面存放的东西决定的  </p>
-<pre><code>可以通过 <span class="keyword">typeof</span>
-</code></pre><p>命名规范 一般推荐驼峰式命名</p>
-<p>-语句 </p>
-<p>-运算符 </p>
-<p>() 括号 提升运算级别 优先运算</p>
-<p>＋＋  －－  递增 递减 有前置和后置</p>
-<pre><code>前缀形式是先运算再赋值
-
-后缀形式是先赋值在运算
-
-！ &amp;&amp; || 逻辑非
-
-＊／％
-
-＋ 加法  拼接
-
-&lt;= &gt;= 
-
-<span class="header">== != </span>
-
-<span class="header">=== !==</span>
-
-&lt; &gt;
-
-?: 三元条件表达式
-
-<span class="header">= += -=</span>
-</code></pre><p>流程控制语句：</p>
-<p>if 最基本的条件判断语句</p>
-<pre><code><span class="keyword">switch</span> 
-
-?:
-
-<span class="keyword">for</span>、<span class="keyword">while</span>、<span class="keyword">do</span>-<span class="keyword">while</span> 
-
-<span class="keyword">for</span>-<span class="keyword">in</span> 遍历对象
-
-forEach 遍历数组
-
-<span class="keyword">try</span> <span class="keyword">catch</span>
-
-width
-
-<span class="built_in">eval</span>
-</code></pre><p>－ 作用域</p>
-<p>－ this:可以参考this这篇文章。</p>
-<pre><code><span class="keyword">this</span>是Javascript语言的一个关键字。
-
-它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用
-
-随着函数使用场合的不同，<span class="keyword">this</span>的值会发生变化。但是有一个总的原则，那就是<span class="keyword">this</span>指的是，调用函数的那个对象。
-
-<span class="number">1.</span> 普通函数调用
-
-<span class="number">2.</span> 作为对象方法的调用
-
-<span class="number">3.</span> 作为构造函数调用
-
-<span class="number">4.</span> apply() call()
-</code></pre><p>－ “构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上</p>
-<p>用构造函数生成实例对象，有一个缺点，那就是无法共享属性和方法。</p>
-<ul>
-<li><p>继承</p>
-<pre><code>对象之间的继承方法
-
-1. 构造函数绑定
-
-使用<span class="operator"><span class="keyword">call</span>或<span class="keyword">apply</span>方法，将父对象的构造函数绑定在子对象上</span>
-</code></pre></li>
-</ul>
-<pre><code>任何一个prototype对象都有一个<span class="function"><span class="keyword">constructor</span>属性，指向它的构造函数
-
-每一个实例也有一个<span class="title">constructor</span>属性，默认调用<span class="title">prototype</span>对象的<span class="title">constructor</span>属性。</span>
-</code></pre>
+        <h3 id="input的文本类型">input的文本类型</h3><pre><code>&lt;input type=<span class="string">"text"</span> name=<span class="string">"mingzi"</span> <span class="keyword">value</span>=<span class="string">"名字"</span> <span class="keyword">checked</span>=<span class="string">"checked"</span>/&gt;
+</code></pre><p>我们可以通过以下方式获取到input的value值</p>
+<pre><code>例<span class="number">1</span>：$(<span class="string">"input"</span>).val();
+例<span class="number">2</span>：$(<span class="string">"input"</span>).attr(<span class="string">"value"</span>);
+例<span class="number">3</span>：$(<span class="string">"input"</span>).attr(<span class="string">"value"</span>,<span class="string">"名字"</span>);这个是修改input的值
+以上代码就可以获取input的value值了。
+</code></pre><p>以上是获取到了，input没有改写之前的值，要想获取到改变之后输入框的值，需要用到change事件。</p>
+<pre><code>例：$(<span class="string">"input"</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> num=$(<span class="string">"input"</span>).val();
+    <span class="built_in">console</span>.log(num)
+})<span class="comment">//这里的num就是你输入的值。</span>
+</code></pre><h3 id="input的复选框和单选框">input的复选框和单选框</h3><p>对于单选和复选的操作更多的是判断他们有没有被选中的状态，下面这个例子是获取到checkbox中选中的多个值。主要是通过class来控制的。</p>
+<pre><code><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"test"</span> <span class="attribute">value</span>=<span class="value">"1"</span>/&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>1<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"test"</span> <span class="attribute">value</span>=<span class="value">"2"</span>/&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>2<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"test"</span> <span class="attribute">value</span>=<span class="value">"3"</span>/&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>3<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"test"</span> <span class="attribute">value</span>=<span class="value">"4"</span>/&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>4<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"test"</span> <span class="attribute">value</span>=<span class="value">"5"</span>/&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>5<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">br</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">'button'</span> <span class="attribute">value</span>=<span class="value">'提交'</span> <span class="attribute">onclick</span>=<span class="value">"fun()"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript">
+    <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>{
+    obj = <span class="built_in">document</span>.getElementsByName(<span class="string">"test"</span>);
+    check_val = [];
+    <span class="keyword">for</span>(k <span class="keyword">in</span> obj){
+        <span class="keyword">if</span>(obj[k].checked){
+            check_val.push(obj[k].value);
+            }            
+        }    
+    alert(check_val);
+}</span>
+</code></pre><h3 id="input的select属性值">input的select属性值</h3>
       
     </div>
 
@@ -416,17 +294,13 @@ width
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/29/css小结2/" rel="next" title="css小结2">
-                <i class="fa fa-chevron-left"></i> css小结2
+              <a href="/2016/03/14/微信开发的环境配置流程/" rel="next" title="微信开发的环境配置流程">
+                <i class="fa fa-chevron-left"></i> 微信开发的环境配置流程
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/01/清除浮动的方法/" rel="prev" title="清除浮动的方法">
-                清除浮动的方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -530,7 +404,7 @@ width
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#input的文本类型"><span class="nav-number">1.</span> <span class="nav-text">input的文本类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#input的复选框和单选框"><span class="nav-number">2.</span> <span class="nav-text">input的复选框和单选框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#input的select属性值"><span class="nav-number">3.</span> <span class="nav-text">input的select属性值</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

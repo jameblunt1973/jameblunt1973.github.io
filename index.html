@@ -212,6 +212,118 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/24/获取表单值的方法/" itemprop="url">
+                  获取表单值的方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-24T11:36:48+08:00" content="2016-03-24">
+              2016-03-24
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="input的文本类型">input的文本类型</h3><pre><code>&lt;input type=<span class="string">"text"</span> name=<span class="string">"mingzi"</span> <span class="keyword">value</span>=<span class="string">"名字"</span> <span class="keyword">checked</span>=<span class="string">"checked"</span>/&gt;
+</code></pre><p>我们可以通过以下方式获取到input的value值</p>
+<pre><code>例<span class="number">1</span>：$(<span class="string">"input"</span>).val();
+例<span class="number">2</span>：$(<span class="string">"input"</span>).attr(<span class="string">"value"</span>);
+例<span class="number">3</span>：$(<span class="string">"input"</span>).attr(<span class="string">"value"</span>,<span class="string">"名字"</span>);这个是修改input的值
+以上代码就可以获取input的value值了。
+</code></pre><p>以上是获取到了，input没有改写之前的值，要想获取到改变之后输入框的值，需要用到change事件。</p>
+<pre><code>例：$(<span class="string">"input"</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> num=$(<span class="string">"input"</span>).val();
+    <span class="built_in">console</span>.log(num)
+})<span class="comment">//这里的num就是你输入的值。</span>
+</code></pre><h3 id="input的复选框和单选框">input的复选框和单选框</h3><p>对于单选和复选的操作更多的是判断他们有没有被选中的状态，下面这个例子是获取到checkbox中选中的多个值。主要是通过class来控制的。</p>
+<pre><code><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"test"</span> <span class="attribute">value</span>=<span class="value">"1"</span>/&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>1<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"test"</span> <span class="attribute">value</span>=<span class="value">"2"</span>/&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>2<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"test"</span> <span class="attribute">value</span>=<span class="value">"3"</span>/&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>3<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"test"</span> <span class="attribute">value</span>=<span class="value">"4"</span>/&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>4<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"test"</span> <span class="attribute">value</span>=<span class="value">"5"</span>/&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>5<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">br</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">'button'</span> <span class="attribute">value</span>=<span class="value">'提交'</span> <span class="attribute">onclick</span>=<span class="value">"fun()"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript">
+    <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>{
+    obj = <span class="built_in">document</span>.getElementsByName(<span class="string">"test"</span>);
+    check_val = [];
+    <span class="keyword">for</span>(k <span class="keyword">in</span> obj){
+        <span class="keyword">if</span>(obj[k].checked){
+            check_val.push(obj[k].value);
+            }            
+        }    
+    alert(check_val);
+}</span>
+</code></pre><h3 id="input的select属性值">input的select属性值</h3>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/14/微信开发的环境配置流程/" itemprop="url">
                   微信开发的环境配置流程
                 </a>
@@ -1629,149 +1741,6 @@ woqu()<span class="comment">//在此处执行函数时，不可以遍历到i的�
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/05/js中的this使用/" itemprop="url">
-                  js中的this运用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-05T17:18:43+08:00" content="2015-12-05">
-              2015-12-05
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="this">this</h2><p>   只能在函数内部使用，原则，this指向一个对象，在函数中调用。this指的是调用函数的那个对象。<br></p>
-<p>  可以参考”<a href="http://blog.jobbole.com/39305/" target="_blank" rel="external">http://blog.jobbole.com/39305/</a>“<br>  常用的调用情况有下面几种，在使用的时候记住使用的环境进行嵌套就行了 。</p>
-<p>1.纯粹的函数调用时，属于全局调用，因此this指向全局window。</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>{
-    <span class="keyword">this</span>.x=<span class="number">1</span>;
-    alert(<span class="keyword">this</span>.x);      
-}     
-test();<span class="comment">//1</span>
-</code></pre><p> 为了证明this指向全局对象，以下代码等同于上边：</p>
-<pre><code>var x=<span class="number">1</span>;
-<span class="function">fucntion <span class="title">test</span><span class="params">()</span></span>{
-    alert(<span class="keyword">this</span>.x)
-}
-  test();<span class="comment">//1</span>
-</code></pre><p>2.当函数作为对象的方法调用时，this指向该对象。</p>
-<pre><code>例：<span class="keyword">var</span> obj= {
-    x:<span class="number">10</span>,
-    y:<span class="number">20</span>,
-    fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-        <span class="keyword">this</span>.x = <span class="number">20</span>;
-        <span class="built_in">console</span>.log(<span class="keyword">this</span>)<span class="comment">//this指向obj</span>
-    }
-}
-fn()
-</code></pre><p>3.当函数作为弹出函数调用时，this指向全局对象（严格模式时，为undefined）</p>
-<p>3.作为构造函数中的this时，指向创建该函数的对象</p>
-<pre><code>例：<span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{
-        <span class="keyword">var</span> i = <span class="number">0</span> ;
-        <span class="keyword">var</span> j = <span class="number">0</span> ;
-        <span class="keyword">this</span>.x=<span class="number">1</span>;
-         <span class="built_in">console</span>.log(<span class="keyword">this</span>)
-    }
-fn2 = <span class="keyword">new</span> fn1();
-fn2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-      <span class="keyword">this</span>.y=<span class="number">1</span>;
-      <span class="built_in">console</span>.log(<span class="keyword">this</span>)<span class="comment">//this指向fn1</span>
- }
- fn1(fn2) 
-</code></pre><p>4.apply调用</p>
-<p>apply()是函数对象的一个方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数。</p>
-<pre><code><span class="keyword">var</span> x = <span class="number">0</span>;
-
-　　<span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>{
-
-　　　　alert(<span class="keyword">this</span>.x);
-
-　　}
-
-　　<span class="keyword">var</span> o={};
-
-　　o.x = <span class="number">1</span>;
-
-　　o.m = test;
-
-　　o.m.apply(); <span class="comment">//0 </span>
-</code></pre><p>嵌套函数中的this不会继承上层函数的this，如果需要，可以用一个变量保存上层函数的this。</p>
-<pre><code>再总结的简单点，如果在函数中使用了<span class="keyword">this</span>，只有在该函数直接
-被某对象调用时，该<span class="keyword">this</span>才指向该对象。正常函数的调用，<span class="keyword">this</span>
-指的是<span class="built_in">window</span>，特殊函数的调用，<span class="keyword">this</span>指象对象。函数声明、
-匿名函数和函数表达式在全局中调用 <span class="keyword">this</span>指向<span class="built_in">window</span>
-</code></pre>
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1818,7 +1787,7 @@ fn2 = <span class="function"><span class="keyword">function</span>(<span class="
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
